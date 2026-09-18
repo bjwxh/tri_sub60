@@ -138,6 +138,11 @@ section { margin-bottom: 48px; }
   font-weight: 600;
 }
 
+.stat-card .stat-progress-inline {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
 .stat-card .stat-row {
   display: flex;
   justify-content: space-between;

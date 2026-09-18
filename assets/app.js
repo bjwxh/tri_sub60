@@ -103,6 +103,15 @@ function formatGap(metric, target, latestVal) {
   return { text, good: false };
 }
 
+function formatProgress(first, latest, target) {
+  if (!first || !latest) return null;
+  const denom = target.value - first.value;
+  if (denom === 0) return null;
+  const pct = ((latest.value - first.value) / denom) * 100;
+  const rounded = Math.round(pct);
+  return { text: `${rounded}% to target`, good: rounded >= 100 };
+}
+
 async function renderStats(targets) {
   const grid = document.getElementById("stat-grid");
 
@@ -115,7 +124,9 @@ async function renderStats(targets) {
       .sort((a, b) => a.date.localeCompare(b.date));
 
     const latest = parsed[parsed.length - 1] || null;
+    const first = parsed[0] || null;
     const gap = formatGap(m, target, latest ? latest.value : null);
+    const progress = formatProgress(first, latest, target);
 
     const card = document.createElement("div");
     card.className = "stat-card";
@@ -125,7 +136,7 @@ async function renderStats(targets) {
 
     card.innerHTML = `
       <div class="stat-head">
-        <h3>${m.title}</h3>
+        <h3>${m.title}${progress ? ` &mdash; <span class="${progress.good ? "gap-good" : "stat-progress-inline"}">${progress.text}</span>` : ""}</h3>
         <div class="stat-current">${currentText}</div>
       </div>
       <div class="stat-row">
