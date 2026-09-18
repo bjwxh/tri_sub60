@@ -465,6 +465,19 @@ async function initCalendar() {
   } catch { /* ignore */ }
 }
 
+// ---------- countdown ----------
+
+function renderCountdown() {
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const daysLeft = daysBetween(todayStr, RACE_DAY);
+  const dayIndex = daysBetween(BLOCK_START, todayStr); // 0-based, W1D1 = 0
+  const week = Math.floor(dayIndex / 7) + 1;
+  const dayInWeek = (((dayIndex % 7) + 7) % 7) + 1;
+
+  document.getElementById("countdown-days").textContent = daysLeft >= 0 ? daysLeft : 0;
+  document.getElementById("countdown-week").textContent = `W${week}D${dayInWeek}`;
+}
+
 // ---------- editing (owner-only, via GitHub Contents API) ----------
 
 const OWNER = "bjwxh";
@@ -691,6 +704,7 @@ function initEditing() {
 
 (async function main() {
   const targets = await (await fetch("data/targets.json", { cache: "no-store" })).json();
+  renderCountdown();
   initEditing();
   await renderStats(targets);
   await initCalendar();
