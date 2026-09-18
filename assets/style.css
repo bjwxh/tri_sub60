@@ -427,4 +427,49 @@ button#entry-save {
   margin: 0 0 8px;
 }
 
+.modal-warning {
+  color: var(--critical);
+  background: color-mix(in srgb, var(--critical) 12%, transparent);
+  border: 1px solid var(--critical);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  display: none;
+  margin: 0 0 12px;
+}
+.modal-warning.visible { display: block; }
+
 .modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+.entry-list {
+  max-height: 140px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.entry-list .entry-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 9px;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+.entry-list .entry-row:last-child { border-bottom: none; }
+.entry-list .entry-row.highlight { background: color-mix(in srgb, var(--critical) 14%, transparent); }
+.entry-list .entry-row-main { color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.entry-list .entry-row-notes { color: var(--text-muted); font-size: 0.74rem; }
+.entry-list .entry-empty { padding: 10px; color: var(--text-muted); font-size: 0.78rem; }
+
+.entry-delete-btn {
+  background: transparent;
+  border: 1px solid var(--critical);
+  color: var(--critical);
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.entry-delete-btn:hover { background: color-mix(in srgb, var(--critical) 16%, transparent); }

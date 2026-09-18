@@ -113,6 +113,7 @@ function formatProgress(first, latest, target) {
 }
 
 let currentTargets = null;
+const metricRowsCache = {};
 
 async function renderStats(targets) {
   currentTargets = targets;
@@ -127,6 +128,7 @@ async function renderStats(targets) {
       .filter((r) => r.date && !Number.isNaN(r.value))
       .sort((a, b) => a.date.localeCompare(b.date));
 
+    metricRowsCache[m.key] = parsed;
     const latest = parsed[parsed.length - 1] || null;
     const first = parsed[0] || null;
     const gap = formatGap(m, target, latest ? latest.value : null);
@@ -569,20 +571,18 @@ async function commitEntry(metric, dateStr, value, notes) {
   const headers = splitCSVLine(text.trim().split(/\r?\n/)[0]);
   const rows = parseCSV(text);
 
-  const numStr = Number.isInteger(value) ? String(value) : value.toFixed(1);
-  let row = rows.find((r) => r.date === dateStr);
-  if (row) {
-    row[metric.valueKey] = numStr;
-    row.notes = notes || "";
-  } else {
-    row = { date: dateStr };
-    headers.forEach((h) => {
-      if (h !== "date") row[h] = "";
-    });
-    row[metric.valueKey] = numStr;
-    row.notes = notes || "";
-    rows.push(row);
+  if (rows.some((r) => r.date === dateStr)) {
+    throw new Error(`An entry for ${dateStr} already exists. Delete it first, then add the new value.`);
   }
+
+  const numStr = Number.isInteger(value) ? String(value) : value.toFixed(1);
+  const row = { date: dateStr };
+  headers.forEach((h) => {
+    if (h !== "date") row[h] = "";
+  });
+  row[metric.valueKey] = numStr;
+  row.notes = notes || "";
+  rows.push(row);
   rows.sort((a, b) => a.date.localeCompare(b.date));
 
   const newContent = buildCSV(headers, rows);
@@ -602,6 +602,49 @@ async function commitEntry(metric, dateStr, value, notes) {
   }
 }
 
+async function deleteEntry(metric, dateStr) {
+  const token = getToken();
+  if (!token) throw new Error("Unlock editing first (see header).");
+
+  const apiUrl = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${metric.file}?ref=${BRANCH}`;
+  const authHeaders = {
+    Authorization: `Bearer ${token}`,
+    Accept: "application/vnd.github+json",
+  };
+
+  const getRes = await fetch(apiUrl, { headers: authHeaders });
+  if (!getRes.ok) {
+    if (getRes.status === 401) throw new Error("Invalid or expired token.");
+    if (getRes.status === 403) throw new Error("Token lacks permission for this repo.");
+    throw new Error(`Could not read ${metric.file} (${getRes.status}).`);
+  }
+  const fileData = await getRes.json();
+  const text = b64DecodeUtf8(fileData.content);
+  const headers = splitCSVLine(text.trim().split(/\r?\n/)[0]);
+  const rows = parseCSV(text);
+
+  const remaining = rows.filter((r) => r.date !== dateStr);
+  if (remaining.length === rows.length) {
+    throw new Error(`No entry found for ${dateStr} — it may have already been deleted.`);
+  }
+
+  const newContent = buildCSV(headers, remaining);
+  const putRes = await fetch(apiUrl, {
+    method: "PUT",
+    headers: { ...authHeaders, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: `Delete ${metric.title} entry for ${dateStr}`,
+      content: b64EncodeUtf8(newContent),
+      sha: fileData.sha,
+      branch: BRANCH,
+    }),
+  });
+  if (!putRes.ok) {
+    const body = await putRes.json().catch(() => ({}));
+    throw new Error(body.message || `Delete failed (${putRes.status}).`);
+  }
+}
+
 function clockToSeconds(str) {
   const m = str.trim().match(/^(\d+):([0-5]\d)$/);
   if (!m) return NaN;
@@ -610,13 +653,64 @@ function clockToSeconds(str) {
 
 let activeMetricKey = null;
 
+function isClockMetric(target) {
+  return target.unit === "sec/100yd" || target.unit === "sec";
+}
+
+function renderExistingEntries(key) {
+  const metric = METRICS.find((m) => m.key === key);
+  const rows = metricRowsCache[key] || [];
+  const list = document.getElementById("entry-list");
+  if (!rows.length) {
+    list.innerHTML = `<div class="entry-empty">No entries logged yet.</div>`;
+    return;
+  }
+  list.innerHTML = rows
+    .slice()
+    .reverse()
+    .map((r) => {
+      const valueText = metric.format(r.value);
+      const notesText = r.notes ? ` — ${r.notes}` : "";
+      return `
+        <div class="entry-row" data-date="${r.date}">
+          <span class="entry-row-main">${r.date}: ${valueText}<span class="entry-row-notes">${notesText}</span></span>
+          <button class="entry-delete-btn" data-date="${r.date}">Delete</button>
+        </div>`;
+    })
+    .join("");
+}
+
+function checkDateConflict() {
+  const target = currentTargets[activeMetricKey];
+  const metric = METRICS.find((m) => m.key === activeMetricKey);
+  const dateStr = document.getElementById("entry-date").value;
+  const warnEl = document.getElementById("entry-warning");
+  const saveBtn = document.getElementById("entry-save");
+  const rows = metricRowsCache[activeMetricKey] || [];
+  const existing = rows.find((r) => r.date === dateStr);
+
+  document.querySelectorAll("#entry-list .entry-row").forEach((el) => {
+    el.classList.toggle("highlight", el.dataset.date === dateStr && !!existing);
+  });
+
+  if (existing) {
+    warnEl.textContent = `An entry for ${dateStr} already exists (${metric.format(existing.value)}). Delete it below before adding a new value.`;
+    warnEl.classList.add("visible");
+    saveBtn.disabled = true;
+  } else {
+    warnEl.textContent = "";
+    warnEl.classList.remove("visible");
+    saveBtn.disabled = false;
+  }
+}
+
 function openEntryModal(key) {
   const metric = METRICS.find((m) => m.key === key);
   const target = currentTargets[key];
   if (!metric || !target) return;
   activeMetricKey = key;
 
-  const isClock = target.unit === "sec/100yd" || target.unit === "sec";
+  const isClock = isClockMetric(target);
   document.getElementById("entry-modal-title").textContent = `Add entry — ${metric.title}`;
   document.getElementById("entry-value-label").textContent = isClock ? "Value (m:ss)" : `Value (${target.unit})`;
   const valueInput = document.getElementById("entry-value");
@@ -625,6 +719,8 @@ function openEntryModal(key) {
   document.getElementById("entry-date").value = new Date().toISOString().slice(0, 10);
   document.getElementById("entry-notes").value = "";
   document.getElementById("entry-error").textContent = "";
+  renderExistingEntries(key);
+  checkDateConflict();
   document.getElementById("entry-modal").classList.add("open");
 }
 
@@ -642,9 +738,14 @@ async function handleEntrySave() {
   const dateStr = document.getElementById("entry-date").value;
   const rawValue = document.getElementById("entry-value").value;
   const notes = document.getElementById("entry-notes").value;
-  const isClock = target.unit === "sec/100yd" || target.unit === "sec";
+  const isClock = isClockMetric(target);
 
   if (!dateStr) { errorEl.textContent = "Date is required."; return; }
+  const rows = metricRowsCache[activeMetricKey] || [];
+  if (rows.some((r) => r.date === dateStr)) {
+    errorEl.textContent = `An entry for ${dateStr} already exists. Delete it first.`;
+    return;
+  }
   const value = isClock ? clockToSeconds(rawValue) : parseFloat(rawValue);
   if (!Number.isFinite(value)) {
     errorEl.textContent = isClock ? "Enter a time like 1:52." : "Enter a numeric value.";
@@ -663,6 +764,22 @@ async function handleEntrySave() {
   } finally {
     saveBtn.disabled = false;
     saveBtn.textContent = "Save to GitHub";
+  }
+}
+
+async function handleEntryDelete(dateStr) {
+  const metric = METRICS.find((m) => m.key === activeMetricKey);
+  const errorEl = document.getElementById("entry-error");
+  errorEl.textContent = "";
+  if (!confirm(`Delete the ${metric.title} entry for ${dateStr}? This can't be undone.`)) return;
+
+  try {
+    await deleteEntry(metric, dateStr);
+    await renderStats(currentTargets);
+    renderExistingEntries(activeMetricKey);
+    checkDateConflict();
+  } catch (err) {
+    errorEl.textContent = err.message || "Delete failed.";
   }
 }
 
@@ -692,6 +809,11 @@ function initEditing() {
   });
   document.getElementById("entry-cancel").addEventListener("click", closeEntryModal);
   document.getElementById("entry-save").addEventListener("click", handleEntrySave);
+  document.getElementById("entry-date").addEventListener("change", checkDateConflict);
+  document.getElementById("entry-list").addEventListener("click", (e) => {
+    const btn = e.target.closest(".entry-delete-btn");
+    if (btn) handleEntryDelete(btn.dataset.date);
+  });
   document.getElementById("entry-modal").addEventListener("click", (e) => {
     if (e.target.id === "entry-modal") closeEntryModal();
   });
