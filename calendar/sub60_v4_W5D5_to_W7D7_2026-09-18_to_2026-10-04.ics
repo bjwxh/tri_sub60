@@ -1,0 +1,176 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//OpenAI//Sprint Triathlon Sub60 V4 W5D5-W7D7//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:31973144-b6a5-484a-a2b8-a900ffe261f0@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:W5D5 — Easy Bike + Strength B
+DESCRIPTION:Easy Bike 45–50 min\n• RPE 2/10\n• 不追功率\n• 5×20 sec 高踏频 @ 100–110 rpm\n• 每次之间 2 min easy\n\nStrength B 25–30 min\n1. Single-leg RDL — 2×6/侧\n2. Step-up — 2×8/侧\n3. Soleus calf raise — 3×10\n4. Hamstring curl — 2×8\n5. Side plank — 2组\n\n目标：增加第三次骑行频率，不制造额外疲劳。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:e17faeec-1cf3-4ed2-afb9-df4f75c6c554@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:W5D6 — Long Bike 1h45 + Brick 12min
+DESCRIPTION:Bike — 1 h 45 min\n• 20 min easy\n• 3×10 min aero steady，RPE 3–4\n• 每组之间 5 min easy\n• 其余时间 Z2\n• 不追平均速度\n\nBrick Run — 12 min\n• 前 5 min very easy\n• 后 7 min natural easy\n\n目标：建立 aero position 与下车跑的连续性。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:39c82e93-9aa4-4b86-990a-629e244ec22a@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+SUMMARY:W5D7 — Long Run 60min + Swim 1500–1600yd
+DESCRIPTION:RUN — 60 min easy\n• RPE 2–3/10\n• 全程可对话\n• 不做 fast finish\n\nSWIM — 25 yd pool\n总量：约 1500–1600 yd\n\n1) Warm-up — 300 yd\n• Easy freestyle\n• 目标：2:10–2:20 /100 yd\n\n2) Technique — 4×50 yd drill/swim\n• 25 drill + 25 swim\n• 休 15 sec\n\n3) Main Set — 5×150 yd\n• 目标：3:05–3:12 /150 yd\n• 约 2:03–2:08 /100 yd\n• 休 20 sec\n• RPE 4/10\n\n4) Smooth 50s — 4×50 yd\n• 目标：1:00–1:04 /50 yd\n• 休 15 sec\n\n5) Cool-down — 200 yd easy\n\n若肩部疲劳明显，可减少 1 组150。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:8b7d8ee5-c6fc-413f-9601-1a863088e1e3@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+SUMMARY:W6D1 — Rest
+DESCRIPTION:完全休息。\n\n可选：\n• 15–20 min 散步\n• 轻活动度\n\n记录：\n• 睡眠\n• 主观恢复\n• 腿部疲劳\n• 是否有跑/骑/游疼痛
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:24f24f31-38d1-41a5-9e34-13214f25e843@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260922
+DTEND;VALUE=DATE:20260923
+SUMMARY:W6D2 — Swim 1800yd + Easy Run 45min
+DESCRIPTION:SWIM — 25 yd pool\n总量：约 1800 yd\n\n1) Warm-up\n• 300 yd easy\n• 4×50 drill/swim，休 15 sec\n• 4×25 build，休 20 sec\n\n2) Main Set — 8×100 yd\n• 目标：1:59–2:03 /100 yd\n• 休 20 sec\n• RPE 4–5/10\n• 要求：配速均匀，不冲最后一组\n\n3) Strong Smooth — 4×50 yd\n• 目标：0:56–0:59 /50 yd\n• 休 25 sec\n• RPE 5–6/10\n\n4) Cool-down\n• 200 yd easy\n\nRUN — 45 min\n• 全程 easy\n• 最后 6×15 sec strides\n• stride 之间恢复 75–90 sec\n• Easy 强度 RPE 2–3
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:88be1627-7854-4fd3-a457-a8c192bf0486@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:W6D3 — Bike 80min + Strength A
+DESCRIPTION:BIKE — 80 min\n• 15 min easy\n• 3×10 min steady / upper aerobic，RPE 4\n• 每组之间 5 min easy\n• 其余时间 easy\n• 若 aero position 舒适，可在主组完成部分 aero\n\nSTRENGTH A — 30–35 min\n1. Squat — 3×6\n2. Romanian deadlift — 3×6\n3. Split squat — 2×6/侧\n4. Calf raise — 3×10\n5. Pallof press — 2×8/侧\n\n力量训练保留 2–3 次重复余力。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:efae4848-5989-447c-92b1-9449e8a41a23@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:W6D4 — Swim 1700yd + Easy Run 35min
+DESCRIPTION:SWIM — 25 yd pool\n总量：约 1700 yd\n\n1) Warm-up — 300 yd easy\n\n2) Technique — 6×50 yd\n• 25 drill + 25 swim\n• 休 15 sec\n\n3) Main Set — 6×150 yd\n• 目标：3:02–3:08 /150 yd\n• 约 2:01–2:05 /100 yd\n• 休 20 sec\n• RPE 4–5/10\n\n4) Build — 4×50 yd\n• Smooth build\n• 休 20 sec\n\n5) Cool-down — 200 yd easy\n\nRUN — 35 min easy\n• RPE 2–3\n• 全程可对话\n• 不做 strides
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:b2792d6a-d562-48fe-ac7b-21fddafeb88b@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260926
+SUMMARY:W6D5 — Easy Bike 55min + Strength B
+DESCRIPTION:BIKE — 55 min easy\n• RPE 2/10\n• 全程恢复性有氧\n• 不追速度/功率\n\nSTRENGTH B — 25–30 min\n1. Single-leg RDL — 2×6/侧\n2. Step-up — 2×8/侧\n3. Soleus calf raise — 3×10\n4. Hamstring curl — 2×8\n5. Side plank — 2组\n\n若周三力量后仍有明显DOMS，本日力量减量。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2c09bdaa-7922-4e2b-b6d8-415822fd5ecc@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+SUMMARY:W6D6 — Long Bike 2h + Brick 15min
+DESCRIPTION:BIKE — 2 h\n• 大部分 Z2\n• 3×12 min aero steady，RPE 3–4\n• 每组 5 min easy recovery\n• 不追平均速度\n\nBRICK RUN — 15 min easy\n• 前 5 min very easy\n• 后 10 min natural easy\n• 不追配速\n\n目标：建立骑行频率与 aero position 耐受。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:3d077696-17e5-448a-b9c2-dba150abb61b@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260927
+DTEND;VALUE=DATE:20260928
+SUMMARY:W6D7 — Long Run 65min + Recovery Swim 1400yd
+DESCRIPTION:RUN — 65 min easy\n• RPE 2–3\n• 全程可对话\n• 不做 fast finish\n\nSWIM — 25 yd pool\n总量：约 1400 yd\n\n1) Warm-up — 300 yd easy\n\n2) Technique — 6×50 yd drill/swim\n• 休 15 sec\n\n3) Main Set — 4×150 yd easy aerobic\n• 目标：3:08–3:15 /150 yd\n• 约 2:05–2:10 /100 yd\n• 休 20 sec\n• RPE 3–4/10\n\n4) Cool-down — 200 yd easy\n\n这节游泳以恢复为主。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:0a8d3807-acd1-4060-ab86-131a7f72b795@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260929
+SUMMARY:W7D1 — Rest
+DESCRIPTION:完全休息。\n\n可选轻活动度或 15–20 min 散步。\n重点检查：睡眠、腿部疲劳、肩部状态。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:aeb8318f-4277-467e-a884-090ce5c08355@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260929
+DTEND;VALUE=DATE:20260930
+SUMMARY:W7D2 — Swim 1800yd + Easy Run 50min
+DESCRIPTION:SWIM — 25 yd pool\n总量：约 1800 yd\n\n1) Warm-up — 300 yd easy\n2) Technique — 4×50 yd drill/swim，休 15 sec\n\n3) Main Set — 10×100 yd\n• 目标：1:57–2:01 /100 yd\n• 休 20 sec\n• RPE 4–5/10\n• 重点：10组尽量均匀\n\n4) Strong Smooth — 4×50 yd\n• 目标约 0:56–0:59 /50 yd\n• 休 25 sec\n\n5) Cool-down — 200 yd easy\n\nRUN — 50 min easy\n• RPE 2–3\n• 最后 6×15 sec relaxed strides\n• 每次之间充分恢复
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:4eaccec0-b024-4b8d-8bfc-a2217a976da2@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:W7D3 — Bike 85min + Strength A
+DESCRIPTION:BIKE — 85 min\n• 15 min warm-up\n• 4×8 min @ RPE 5/10\n• 每组之间 4 min easy\n• 其余 easy\n• 可在主组中加入舒适 aero position\n\nSTRENGTH A — 30 min\n1. Squat — 3×6\n2. RDL — 3×6\n3. Split squat — 2×6/侧\n4. Calf raise — 3×10\n5. Pallof press — 2×8/侧\n\n不练到力竭。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:09e32652-cbe4-46d8-8f5f-ffcda5f1c100@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:W7D4 — Swim 1700–1800yd + Easy Run 40min
+DESCRIPTION:SWIM — 25 yd pool\n总量：约 1700–1800 yd\n目标：easy/aerobic，保持技术，不制造疲劳。\n\n建议结构：\n1) 300 yd easy\n2) 6×50 yd drill/swim，休 15 sec\n3) 6×150 yd aerobic\n   • 目标：3:02–3:08 /150 yd\n   • 休 20 sec\n4) 4×50 yd smooth build，休 20 sec\n5) 200 yd easy\n\nRUN — 40 min easy\n• RPE 2–3\n• 不做 strides
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:d620c218-f688-426d-ab19-241ebc48e4eb@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261003
+SUMMARY:W7D5 — Easy Bike 55–60min + Strength B
+DESCRIPTION:BIKE — 55–60 min easy\n• RPE 2/10\n• 纯有氧恢复\n• 不追平均速度\n\nSTRENGTH B — 25 min\n1. Single-leg RDL — 2×6/侧\n2. Step-up — 2×8/侧\n3. Soleus calf raise — 3×10\n4. Hamstring curl — 2×8\n5. Side plank — 2组\n\n如疲劳明显，力量训练可减半。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:5b70f7a4-efa7-4ddd-952b-fb4c189664dc@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+SUMMARY:W7D6 — Long Bike 2h05 + Brick 15min
+DESCRIPTION:BIKE — 2 h 05 min\n• 大部分 Z2\n• 2×20 min aero steady，RPE 4\n• 两组之间 8 min easy\n• 其余 easy\n\nBRICK RUN — 15 min easy\n• 前 5 min very easy\n• 后 10 min natural easy\n\n重点：aero姿势持续性 + 下车转换，不追跑步配速。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:63aef2d7-ed79-438f-b8f5-b60986d628d3@sub60-v4
+DTSTAMP:20260918T132400Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:W7D7 — Long Run 65min + Optional Recovery Swim
+DESCRIPTION:RUN — 65 min easy\n• RPE 2–3\n• 全程可对话\n• 不做 fast finish\n\nOPTIONAL RECOVERY SWIM — 25 yd pool，30–35 min\n若身体恢复良好可做；疲劳则取消。\n\n建议约 1200–1400 yd：\n• 300 yd very easy\n• 4×50 drill/swim，休 15 sec\n• 4×150 easy aerobic @ 3:08–3:15，休 20 sec\n• 4×50 relaxed smooth，休 15 sec\n• 100–200 easy cool-down\n\n这节游泳不是必须完成。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

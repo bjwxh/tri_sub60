@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sub-60 Sprint Tri Training</title>
+<meta name="description" content="Progress tracker for a 50-week training block toward a sub-1-hour sprint triathlon on Aug 1, 2027." />
+<link rel="stylesheet" href="assets/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Sub-60 Sprint Triathlon Training</h1>
+    <p>
+      Tracking a 50-week build toward a sub-1-hour sprint triathlon (375m swim / 22km bike / 5km run)
+      on <strong>August 1, 2027</strong>. This page shows current fitness across the five key markers below,
+      the gap to target for each, and the day-by-day training calendar.
+    </p>
+    <p class="race-meta">Block start: 2026-08-17 (W1D1) &middot; Race day: 2027-08-01 (W50D7)</p>
+  </header>
+
+  <section id="stats">
+    <h2 class="section-title">Progress</h2>
+    <p class="section-sub">Latest test vs. target, with history over the training block.</p>
+    <div class="stat-grid" id="stat-grid"></div>
+  </section>
+
+  <section id="calendar">
+    <h2 class="section-title">Training calendar</h2>
+    <p class="section-sub">Published in rolling 2&ndash;4 week blocks as <code>.ics</code> files in <code>/calendar</code>. Click a day for the full session.</p>
+
+    <div class="cal-toolbar">
+      <button id="cal-prev">&larr; Prev</button>
+      <div class="cal-label" id="cal-label"></div>
+      <button id="cal-next">Next &rarr;</button>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div class="cal-detail" id="cal-detail"></div>
+    <div class="cal-files" id="cal-files"></div>
+  </section>
+
+  <footer>
+    Source data lives in <a href="data/">/data</a> (CSV per metric) and <a href="calendar/">/calendar</a> (ICS per block).
+    Repo: <a href="https://github.com/bjwxh/tri_sub60">github.com/bjwxh/tri_sub60</a>.
+  </footer>
+
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "css": {
+    "metric_key": "seconds_per_100yd",
+    "direction": "down",
+    "value": 104,
+    "unit": "sec/100yd",
+    "label": "1:44/100yd",
+    "range_label": "1:43–1:45/100yd",
+    "source": "Training plan §7.5"
+  },
+  "run5k": {
+    "metric_key": "seconds",
+    "direction": "down",
+    "value": 1125,
+    "unit": "sec",
+    "label": "18:45",
+    "range_label": "18:35–18:55",
+    "source": "Training plan §2.1 (race pace budget)"
+  },
+  "ftp": {
+    "metric_key": "watts",
+    "direction": "up",
+    "value": 255,
+    "unit": "W",
+    "label": "255W",
+    "range_label": null,
+    "source": "Training plan §2.1",
+    "note": "Reference power only — the plan explicitly does not treat FTP as a hard gate. Race readiness is judged primarily by 22km TT time, sustainable aero power, and brick performance."
+  },
+  "vo2": {
+    "metric_key": "vo2max",
+    "direction": "up",
+    "value": 52,
+    "unit": "mL/kg/min",
+    "label": "52 mL/kg/min",
+    "range_label": null,
+    "source": "Estimated (not in original plan)",
+    "note": "Estimated target for an amateur male, age 40–44, aiming for a sub-1:00 sprint triathlon. Based on a study of amateur Olympic-distance triathletes (mean age 42.1y) with measured VO2max 54.0±5.1 mL/kg/min, and general fitness-chart guidance that trained men in their 40s sit in a ~48–55+ mL/kg/min ‘good-to-excellent’ band. No test on file yet."
+  },
+  "bodyweight": {
+    "metric_key": "lbs",
+    "direction": "down",
+    "value": 155,
+    "unit": "lbs",
+    "label": "155 lb",
+    "range_label": null,
+    "source": "User target",
+    "note": "Per plan §17, body weight is treated as a dependent variable, not a hard requirement — shown here as a personal target only."
+  }
+}
