@@ -27,6 +27,18 @@ Drop a new `.ics` file into `calendar/` (each covering the next 2–4 weeks)
 and add its filename to `calendar/manifest.json`'s `files` array. The
 calendar view on the page loads every file listed there.
 
+## Editing the site itself (app.js / style.css)
+
+`index.html` loads these with a `?v=N` cache-busting query string
+(`assets/style.css?v=2`, `assets/app.js?v=2`). GitHub Pages' CDN caches
+files for a while, and iOS Safari (especially a "home screen" app icon)
+caches even more aggressively with no easy hard-refresh. **Whenever you
+edit `assets/app.js` or `assets/style.css`, bump the `?v=` number in
+`index.html` so devices are forced to fetch the new file instead of a
+stale cached one.** The CSV/JSON/ICS data fetches already use
+`cache: "no-store"` in `app.js`, so progress data is always fresh
+without needing this.
+
 ## Local preview
 
 ```

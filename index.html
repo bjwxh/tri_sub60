@@ -5,7 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sub-60 Sprint Tri Training</title>
 <meta name="description" content="Progress tracker for a 50-week training block toward a sub-1-hour sprint triathlon on Aug 1, 2027." />
-<link rel="stylesheet" href="assets/style.css" />
+
+<!-- Always-dark theme, independent of OS light/dark setting -->
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#0d0d0d" />
+
+<!-- iOS "Add to Home Screen": run as a standalone dark app, not a themed browser tab -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Sub-60 Tri" />
+
+<!-- Best-effort: discourage the browser from serving a stale cached copy of this page -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<link rel="stylesheet" href="assets/style.css?v=2" />
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -106,6 +121,6 @@
   </div>
 </div>
 
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=2"></script>
 </body>
 </html>
