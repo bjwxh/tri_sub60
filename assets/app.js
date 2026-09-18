@@ -112,8 +112,12 @@ function formatProgress(first, latest, target) {
   return { text: `${rounded}% to target`, good: rounded >= 100 };
 }
 
+let currentTargets = null;
+
 async function renderStats(targets) {
+  currentTargets = targets;
   const grid = document.getElementById("stat-grid");
+  grid.innerHTML = "";
 
   for (const m of METRICS) {
     const rows = await loadCSV(m.file);
@@ -136,7 +140,10 @@ async function renderStats(targets) {
 
     card.innerHTML = `
       <div class="stat-head">
-        <h3>${m.title}${progress ? ` &mdash; <span class="${progress.good ? "gap-good" : "stat-progress-inline"}">${progress.text}</span>` : ""}</h3>
+        <div class="stat-title-row">
+          <h3>${m.title}${progress ? ` &mdash; <span class="${progress.good ? "gap-good" : "stat-progress-inline"}">${progress.text}</span>` : ""}</h3>
+          <button class="stat-add-btn" data-key="${m.key}">+ Add entry</button>
+        </div>
         <div class="stat-current">${currentText}</div>
       </div>
       <div class="stat-row">
@@ -157,6 +164,8 @@ async function renderStats(targets) {
     box.appendChild(canvas);
     drawChart(canvas, parsed, target);
   }
+
+  refreshAddButtonsVisibility();
 }
 
 const BLOCK_START = "2026-08-17"; // W1D1
@@ -456,10 +465,233 @@ async function initCalendar() {
   } catch { /* ignore */ }
 }
 
+// ---------- editing (owner-only, via GitHub Contents API) ----------
+
+const OWNER = "bjwxh";
+const REPO = "tri_sub60";
+const BRANCH = "main";
+const TOKEN_KEY = "tri60_gh_pat";
+
+function getToken() {
+  try {
+    return localStorage.getItem(TOKEN_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+function setToken(token) {
+  try {
+    localStorage.setItem(TOKEN_KEY, token);
+  } catch {
+    /* ignore */
+  }
+}
+
+function clearToken() {
+  try {
+    localStorage.removeItem(TOKEN_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+function refreshAddButtonsVisibility() {
+  const unlocked = !!getToken();
+  document.querySelectorAll(".stat-add-btn").forEach((btn) => btn.classList.toggle("visible", unlocked));
+}
+
+function updateLockUI() {
+  const token = getToken();
+  const toggle = document.getElementById("lock-toggle");
+  toggle.textContent = token ? "✓ Editing unlocked (manage token)" : "Owner? Unlock editing";
+  toggle.classList.toggle("unlocked", !!token);
+  refreshAddButtonsVisibility();
+}
+
+function b64EncodeUtf8(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = "";
+  bytes.forEach((b) => (binary += String.fromCharCode(b)));
+  return btoa(binary);
+}
+
+function b64DecodeUtf8(b64) {
+  const binary = atob(b64.replace(/\n/g, ""));
+  const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
+  return new TextDecoder().decode(bytes);
+}
+
+function csvField(v) {
+  const s = v == null ? "" : String(v);
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+function buildCSV(headers, rows) {
+  const lines = [headers.join(",")];
+  for (const r of rows) {
+    lines.push(headers.map((h) => csvField(r[h] ?? "")).join(","));
+  }
+  return lines.join("\n") + "\n";
+}
+
+async function commitEntry(metric, dateStr, value, notes) {
+  const token = getToken();
+  if (!token) throw new Error("Unlock editing first (see header).");
+
+  const apiUrl = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${metric.file}?ref=${BRANCH}`;
+  const authHeaders = {
+    Authorization: `Bearer ${token}`,
+    Accept: "application/vnd.github+json",
+  };
+
+  const getRes = await fetch(apiUrl, { headers: authHeaders });
+  if (!getRes.ok) {
+    if (getRes.status === 401) throw new Error("Invalid or expired token.");
+    if (getRes.status === 403) throw new Error("Token lacks permission for this repo.");
+    throw new Error(`Could not read ${metric.file} (${getRes.status}).`);
+  }
+  const fileData = await getRes.json();
+  const text = b64DecodeUtf8(fileData.content);
+  const headers = splitCSVLine(text.trim().split(/\r?\n/)[0]);
+  const rows = parseCSV(text);
+
+  const numStr = Number.isInteger(value) ? String(value) : value.toFixed(1);
+  let row = rows.find((r) => r.date === dateStr);
+  if (row) {
+    row[metric.valueKey] = numStr;
+    row.notes = notes || "";
+  } else {
+    row = { date: dateStr };
+    headers.forEach((h) => {
+      if (h !== "date") row[h] = "";
+    });
+    row[metric.valueKey] = numStr;
+    row.notes = notes || "";
+    rows.push(row);
+  }
+  rows.sort((a, b) => a.date.localeCompare(b.date));
+
+  const newContent = buildCSV(headers, rows);
+  const putRes = await fetch(apiUrl, {
+    method: "PUT",
+    headers: { ...authHeaders, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: `Log ${metric.title}: ${numStr} on ${dateStr}`,
+      content: b64EncodeUtf8(newContent),
+      sha: fileData.sha,
+      branch: BRANCH,
+    }),
+  });
+  if (!putRes.ok) {
+    const body = await putRes.json().catch(() => ({}));
+    throw new Error(body.message || `Save failed (${putRes.status}).`);
+  }
+}
+
+function clockToSeconds(str) {
+  const m = str.trim().match(/^(\d+):([0-5]\d)$/);
+  if (!m) return NaN;
+  return parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
+}
+
+let activeMetricKey = null;
+
+function openEntryModal(key) {
+  const metric = METRICS.find((m) => m.key === key);
+  const target = currentTargets[key];
+  if (!metric || !target) return;
+  activeMetricKey = key;
+
+  const isClock = target.unit === "sec/100yd" || target.unit === "sec";
+  document.getElementById("entry-modal-title").textContent = `Add entry — ${metric.title}`;
+  document.getElementById("entry-value-label").textContent = isClock ? "Value (m:ss)" : `Value (${target.unit})`;
+  const valueInput = document.getElementById("entry-value");
+  valueInput.placeholder = isClock ? "1:52" : target.unit;
+  valueInput.value = "";
+  document.getElementById("entry-date").value = new Date().toISOString().slice(0, 10);
+  document.getElementById("entry-notes").value = "";
+  document.getElementById("entry-error").textContent = "";
+  document.getElementById("entry-modal").classList.add("open");
+}
+
+function closeEntryModal() {
+  document.getElementById("entry-modal").classList.remove("open");
+  activeMetricKey = null;
+}
+
+async function handleEntrySave() {
+  const metric = METRICS.find((m) => m.key === activeMetricKey);
+  const target = currentTargets[activeMetricKey];
+  const errorEl = document.getElementById("entry-error");
+  errorEl.textContent = "";
+
+  const dateStr = document.getElementById("entry-date").value;
+  const rawValue = document.getElementById("entry-value").value;
+  const notes = document.getElementById("entry-notes").value;
+  const isClock = target.unit === "sec/100yd" || target.unit === "sec";
+
+  if (!dateStr) { errorEl.textContent = "Date is required."; return; }
+  const value = isClock ? clockToSeconds(rawValue) : parseFloat(rawValue);
+  if (!Number.isFinite(value)) {
+    errorEl.textContent = isClock ? "Enter a time like 1:52." : "Enter a numeric value.";
+    return;
+  }
+
+  const saveBtn = document.getElementById("entry-save");
+  saveBtn.disabled = true;
+  saveBtn.textContent = "Saving…";
+  try {
+    await commitEntry(metric, dateStr, value, notes);
+    closeEntryModal();
+    await renderStats(currentTargets);
+  } catch (err) {
+    errorEl.textContent = err.message || "Save failed.";
+  } finally {
+    saveBtn.disabled = false;
+    saveBtn.textContent = "Save to GitHub";
+  }
+}
+
+function initEditing() {
+  updateLockUI();
+
+  document.getElementById("lock-toggle").addEventListener("click", () => {
+    document.getElementById("lock-panel").classList.toggle("open");
+  });
+  document.getElementById("token-save").addEventListener("click", () => {
+    const val = document.getElementById("token-input").value.trim();
+    if (val) {
+      setToken(val);
+      document.getElementById("token-input").value = "";
+      updateLockUI();
+    }
+  });
+  document.getElementById("token-clear").addEventListener("click", () => {
+    clearToken();
+    document.getElementById("token-input").value = "";
+    updateLockUI();
+  });
+
+  document.getElementById("stat-grid").addEventListener("click", (e) => {
+    const btn = e.target.closest(".stat-add-btn");
+    if (btn) openEntryModal(btn.dataset.key);
+  });
+  document.getElementById("entry-cancel").addEventListener("click", closeEntryModal);
+  document.getElementById("entry-save").addEventListener("click", handleEntrySave);
+  document.getElementById("entry-modal").addEventListener("click", (e) => {
+    if (e.target.id === "entry-modal") closeEntryModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeEntryModal();
+  });
+}
+
 // ---------- boot ----------
 
 (async function main() {
   const targets = await (await fetch("data/targets.json", { cache: "no-store" })).json();
+  initEditing();
   await renderStats(targets);
   await initCalendar();
 })();

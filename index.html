@@ -19,6 +19,22 @@
       the gap to target for each, and the day-by-day training calendar.
     </p>
     <p class="race-meta">Block start: 2026-08-17 (W1D1) &middot; Race day: 2027-08-01 (W50D7)</p>
+
+    <div class="lock-bar" id="lock-bar">
+      <button id="lock-toggle" class="lock-toggle">Owner? Unlock editing</button>
+      <div class="lock-panel" id="lock-panel">
+        <p class="lock-hint">
+          Paste a GitHub fine-grained personal access token scoped to only this repo
+          (<code>Contents: Read and write</code>). It's saved in this browser's local storage
+          and sent only to GitHub's API &mdash; never anywhere else.
+        </p>
+        <div class="lock-row">
+          <input type="password" id="token-input" placeholder="github_pat_..." autocomplete="off" />
+          <button id="token-save">Save</button>
+          <button id="token-clear" class="btn-secondary">Clear</button>
+        </div>
+      </div>
+    </div>
   </header>
 
   <section id="stats">
@@ -47,6 +63,30 @@
   </footer>
 
 </div>
+
+<div class="modal-overlay" id="entry-modal">
+  <div class="modal-panel">
+    <h4 id="entry-modal-title">Add entry</h4>
+    <div class="modal-row">
+      <label for="entry-date">Date</label>
+      <input type="date" id="entry-date" />
+    </div>
+    <div class="modal-row">
+      <label for="entry-value" id="entry-value-label">Value</label>
+      <input type="text" id="entry-value" />
+    </div>
+    <div class="modal-row">
+      <label for="entry-notes">Notes (optional)</label>
+      <input type="text" id="entry-notes" />
+    </div>
+    <p class="modal-error" id="entry-error"></p>
+    <div class="modal-actions">
+      <button id="entry-cancel" class="btn-secondary">Cancel</button>
+      <button id="entry-save">Save to GitHub</button>
+    </div>
+  </div>
+</div>
+
 <script src="assets/app.js"></script>
 </body>
 </html>
