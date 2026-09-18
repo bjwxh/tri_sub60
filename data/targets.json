@@ -30,12 +30,12 @@
   "vo2": {
     "metric_key": "vo2max",
     "direction": "up",
-    "value": 52,
+    "value": 62,
     "unit": "mL/kg/min",
-    "label": "52 mL/kg/min",
+    "label": "62 mL/kg/min",
     "range_label": null,
-    "source": "Estimated (not in original plan)",
-    "note": "Estimated target for an amateur male, age 40–44, aiming for a sub-1:00 sprint triathlon. Based on a study of amateur Olympic-distance triathletes (mean age 42.1y) with measured VO2max 54.0±5.1 mL/kg/min, and general fitness-chart guidance that trained men in their 40s sit in a ~48–55+ mL/kg/min ‘good-to-excellent’ band. No test on file yet."
+    "source": "User target (race day)",
+    "note": "User-set target for race day, age 41. Published data for amateur Olympic-distance triathletes (mean age 42.1y) shows measured VO2max 54.0±5.1 mL/kg/min, and general fitness-chart guidance puts trained men in their 40s at ~48–55+ mL/kg/min ‘good-to-excellent’; 62 sits above that band as a stretch target."
   },
   "bodyweight": {
     "metric_key": "lbs",
