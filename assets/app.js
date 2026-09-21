@@ -178,15 +178,16 @@ function diffToClock(sec) {
 }
 
 const GAME_TIME_LEGS = [
-  { key: "swim_sec", label: "Swim 375m" },
-  { key: "t1_sec", label: "T1" },
-  { key: "bike_sec", label: "Bike 22km" },
-  { key: "t2_sec", label: "T2" },
-  { key: "run_sec", label: "Run 5km" },
+  { key: "swim_sec", label: "🏊‍♂️ Swim 375m" },
+  { key: "t1_sec", label: "🔄 T1" },
+  { key: "bike_sec", label: "🚴 Bike 22km" },
+  { key: "t2_sec", label: "🔄 T2" },
+  { key: "run_sec", label: "🏃 Run 5km" },
 ];
 
 let gameTimeRows = [];
 let gameTimeChampion = null;
+let gameTimeMaxAbsDiff = 0;
 
 async function loadGameTime() {
   const rows = await loadCSV("data/game_time.csv");
@@ -205,6 +206,14 @@ async function loadGameTime() {
     .sort((a, b) => a.date.localeCompare(b.date));
 
   gameTimeChampion = await (await fetch("data/game_time_champion.json", { cache: "no-store" })).json();
+
+  // Fixed scale across all dates/legs, so bars are comparable when switching dates.
+  const diffs = [];
+  gameTimeRows.forEach((entry) => {
+    GAME_TIME_LEGS.forEach((leg) => diffs.push(Math.abs(entry[leg.key] - gameTimeChampion[leg.key])));
+    diffs.push(Math.abs(entry.total_sec - gameTimeChampion.total_sec));
+  });
+  gameTimeMaxAbsDiff = Math.max(...diffs, 0);
 }
 
 function renderGameTimeRow(label, mine, champ, isTotal, maxAbsDiff) {
@@ -241,14 +250,10 @@ function renderGameTime(dateStr) {
     return;
   }
 
-  const diffs = GAME_TIME_LEGS.map((leg) => Math.abs(entry[leg.key] - gameTimeChampion[leg.key]));
-  diffs.push(Math.abs(entry.total_sec - gameTimeChampion.total_sec));
-  const maxAbsDiff = Math.max(...diffs);
-
   GAME_TIME_LEGS.forEach((leg) => {
-    tbody.appendChild(renderGameTimeRow(leg.label, entry[leg.key], gameTimeChampion[leg.key], false, maxAbsDiff));
+    tbody.appendChild(renderGameTimeRow(leg.label, entry[leg.key], gameTimeChampion[leg.key], false, gameTimeMaxAbsDiff));
   });
-  tbody.appendChild(renderGameTimeRow("Total", entry.total_sec, gameTimeChampion.total_sec, true, maxAbsDiff));
+  tbody.appendChild(renderGameTimeRow("🏁 Total", entry.total_sec, gameTimeChampion.total_sec, true, gameTimeMaxAbsDiff));
 
   const totalDiff = entry.total_sec - gameTimeChampion.total_sec;
   const cls = totalDiff < 0 ? "gt-diff-faster" : "gt-diff-slower";
