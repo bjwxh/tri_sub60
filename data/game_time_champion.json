@@ -1,0 +1,9 @@
+{
+  "swim_sec": 470,
+  "t1_sec": 70,
+  "bike_sec": 1940,
+  "t2_sec": 40,
+  "run_sec": 1130,
+  "total_sec": 3650,
+  "source": "Age-group champion's race time reference"
+}

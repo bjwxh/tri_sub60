@@ -1,0 +1,3 @@
+date,type,swim_sec,t1_sec,bike_sec,t2_sec,run_sec,total_sec,notes
+2026-08-02,actual,457,291,2708,124,1626,5206,First race
+2026-09-13,estimate,400,150,2460,90,1530,4630,4-week test estimate (CSS + FTP + 5K)

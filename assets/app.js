@@ -170,6 +170,112 @@ async function renderStats(targets) {
   refreshAddButtonsVisibility();
 }
 
+// ---------- game time ----------
+
+function diffToClock(sec) {
+  const sign = sec < 0 ? "-" : "+";
+  return sign + secToClock(Math.abs(sec));
+}
+
+const GAME_TIME_LEGS = [
+  { key: "swim_sec", label: "Swim 375m" },
+  { key: "t1_sec", label: "T1" },
+  { key: "bike_sec", label: "Bike 22km" },
+  { key: "t2_sec", label: "T2" },
+  { key: "run_sec", label: "Run 5km" },
+];
+
+let gameTimeRows = [];
+let gameTimeChampion = null;
+
+async function loadGameTime() {
+  const rows = await loadCSV("data/game_time.csv");
+  gameTimeRows = rows
+    .map((r) => ({
+      date: r.date,
+      type: r.type,
+      swim_sec: parseFloat(r.swim_sec),
+      t1_sec: parseFloat(r.t1_sec),
+      bike_sec: parseFloat(r.bike_sec),
+      t2_sec: parseFloat(r.t2_sec),
+      run_sec: parseFloat(r.run_sec),
+      total_sec: parseFloat(r.total_sec),
+    }))
+    .filter((r) => r.date)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  gameTimeChampion = await (await fetch("data/game_time_champion.json", { cache: "no-store" })).json();
+}
+
+function renderGameTimeRow(label, mine, champ, isTotal, maxAbsDiff) {
+  const diff = mine - champ; // negative = faster than the champion
+  const faster = diff < 0;
+  const pct = maxAbsDiff > 0 ? Math.min(Math.abs(diff) / maxAbsDiff, 1) * 50 : 0;
+
+  const tr = document.createElement("tr");
+  if (isTotal) tr.classList.add("gt-total");
+
+  tr.innerHTML = `
+    <td>${label}</td>
+    <td class="gt-mine">${secToClock(mine)}</td>
+    <td class="gt-champ">${secToClock(champ)}</td>
+    <td class="gt-bar-cell">
+      <div class="gt-bar-track">
+        <div class="gt-bar-fill ${faster ? "gt-faster" : "gt-slower"}"
+             style="${faster ? `right:50%; width:${pct}%;` : `left:50%; width:${pct}%;`}"></div>
+      </div>
+    </td>
+  `;
+  return tr;
+}
+
+function renderGameTime(dateStr) {
+  const tbody = document.getElementById("game-time-tbody");
+  const totalDiffEl = document.getElementById("game-time-total-diff");
+  tbody.innerHTML = "";
+
+  const entry = gameTimeRows.find((r) => r.date === dateStr);
+  if (!entry || !gameTimeChampion) {
+    tbody.innerHTML = `<tr><td colspan="4" class="game-time-empty">No data for this date</td></tr>`;
+    totalDiffEl.textContent = "";
+    return;
+  }
+
+  const diffs = GAME_TIME_LEGS.map((leg) => Math.abs(entry[leg.key] - gameTimeChampion[leg.key]));
+  diffs.push(Math.abs(entry.total_sec - gameTimeChampion.total_sec));
+  const maxAbsDiff = Math.max(...diffs);
+
+  GAME_TIME_LEGS.forEach((leg) => {
+    tbody.appendChild(renderGameTimeRow(leg.label, entry[leg.key], gameTimeChampion[leg.key], false, maxAbsDiff));
+  });
+  tbody.appendChild(renderGameTimeRow("Total", entry.total_sec, gameTimeChampion.total_sec, true, maxAbsDiff));
+
+  const totalDiff = entry.total_sec - gameTimeChampion.total_sec;
+  const cls = totalDiff < 0 ? "gt-diff-faster" : "gt-diff-slower";
+  totalDiffEl.innerHTML = `Total time gap: <span class="${cls}">${diffToClock(totalDiff)}</span>`;
+}
+
+function initGameTime() {
+  const select = document.getElementById("game-time-date");
+  select.innerHTML = "";
+
+  if (!gameTimeRows.length) {
+    document.getElementById("game-time-tbody").innerHTML = `<tr><td colspan="4" class="game-time-empty">No data logged yet</td></tr>`;
+    return;
+  }
+
+  gameTimeRows.forEach((r) => {
+    const opt = document.createElement("option");
+    opt.value = r.date;
+    opt.textContent = r.date;
+    select.appendChild(opt);
+  });
+
+  select.value = gameTimeRows[gameTimeRows.length - 1].date;
+  select.addEventListener("change", () => renderGameTime(select.value));
+  renderGameTime(select.value);
+}
+
 const BLOCK_START = "2026-08-17"; // W1D1
 const RACE_DAY = "2027-08-01"; // W50D7
 
@@ -828,6 +934,8 @@ function initEditing() {
   const targets = await (await fetch("data/targets.json", { cache: "no-store" })).json();
   renderCountdown();
   initEditing();
+  await loadGameTime();
+  initGameTime();
   await renderStats(targets);
   await initCalendar();
 })();
