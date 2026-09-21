@@ -257,7 +257,7 @@ function renderGameTime(dateStr) {
 
   const totalDiff = entry.total_sec - gameTimeChampion.total_sec;
   const cls = totalDiff < 0 ? "gt-diff-faster" : "gt-diff-slower";
-  totalDiffEl.innerHTML = `Total time gap: <span class="${cls}">${diffToClock(totalDiff)}</span>`;
+  totalDiffEl.innerHTML = `<span class="gt-diff-label">⏱ Total Time Gap</span><span class="gt-diff-value ${cls}">${diffToClock(totalDiff)}</span>`;
 }
 
 function initGameTime() {
