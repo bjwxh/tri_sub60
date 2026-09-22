@@ -24,7 +24,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png?v=1" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=1" />
 
-<link rel="stylesheet" href="assets/style.css?v=6" />
+<link rel="stylesheet" href="assets/style.css?v=7" />
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -100,6 +100,37 @@
     <div class="stat-grid" id="stat-grid"></div>
   </section>
 
+  <section id="hr-zones">
+    <h2 class="section-title">Heart Rate Zones</h2>
+    <p class="section-sub">
+      Karvonen (heart rate reserve) zones, computed from resting and max heart rate.
+      <a href="https://www.topendsports.com/fitness/karvonen-formula-calculator.htm" target="_blank" rel="noopener">Formula reference</a>.
+    </p>
+
+    <div class="hrz-panel">
+      <div class="hrz-toolbar">
+        <div class="hrz-date-group">
+          <label for="hrz-date">Date</label>
+          <select id="hrz-date"></select>
+        </div>
+        <button id="hrz-add-btn" class="stat-add-btn">+ Add entry</button>
+      </div>
+
+      <div class="hrz-current">
+        <div class="hrz-current-item">
+          <div class="hrz-current-label">Resting HR</div>
+          <div class="hrz-current-value" id="hrz-resting">&mdash;</div>
+        </div>
+        <div class="hrz-current-item">
+          <div class="hrz-current-label">Max HR</div>
+          <div class="hrz-current-value" id="hrz-max">&mdash;</div>
+        </div>
+      </div>
+
+      <div class="hrz-zones" id="hrz-zones"></div>
+    </div>
+  </section>
+
   <section id="calendar">
     <h2 class="section-title">Training calendar</h2>
     <p class="section-sub">Published in rolling 2&ndash;4 week blocks as <code>.ics</code> files in <code>/calendar</code>. Click a day for the full session.</p>
@@ -152,6 +183,41 @@
   </div>
 </div>
 
-<script src="assets/app.js?v=2"></script>
+<div class="modal-overlay" id="hr-entry-modal">
+  <div class="modal-panel">
+    <h4>Add heart rate entry</h4>
+
+    <div class="modal-row">
+      <label>Existing entries</label>
+      <div class="entry-list" id="hr-entry-list"></div>
+    </div>
+
+    <p class="modal-warning" id="hr-entry-warning"></p>
+
+    <div class="modal-row">
+      <label for="hr-entry-date">Date</label>
+      <input type="date" id="hr-entry-date" />
+    </div>
+    <div class="modal-row">
+      <label for="hr-entry-resting">Resting HR (bpm) &mdash; leave blank to carry forward the previous value</label>
+      <input type="text" id="hr-entry-resting" placeholder="e.g. 52" />
+    </div>
+    <div class="modal-row">
+      <label for="hr-entry-max">Max HR (bpm) &mdash; leave blank to carry forward the previous value</label>
+      <input type="text" id="hr-entry-max" placeholder="e.g. 195" />
+    </div>
+    <div class="modal-row">
+      <label for="hr-entry-notes">Notes (optional)</label>
+      <input type="text" id="hr-entry-notes" />
+    </div>
+    <p class="modal-error" id="hr-entry-error"></p>
+    <div class="modal-actions">
+      <button id="hr-entry-cancel" class="btn-secondary">Cancel</button>
+      <button id="hr-entry-save">Save to GitHub</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js?v=4"></script>
 </body>
 </html>

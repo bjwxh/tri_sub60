@@ -281,6 +281,328 @@ function initGameTime() {
   renderGameTime(select.value);
 }
 
+// ---------- heart rate zones ----------
+
+// Karvonen (heart rate reserve) method: target = (HRmax - HRrest) * %intensity + HRrest
+const HR_ZONES = [
+  { key: "z1", label: "Zone 1", desc: "Very light / recovery", lo: 0.50, hi: 0.60 },
+  { key: "z2", label: "Zone 2", desc: "Light / aerobic base", lo: 0.60, hi: 0.70 },
+  { key: "z3", label: "Zone 3", desc: "Moderate / aerobic", lo: 0.70, hi: 0.80 },
+  { key: "z4", label: "Zone 4", desc: "Hard / threshold", lo: 0.80, hi: 0.90 },
+  { key: "z5", label: "Zone 5", desc: "Maximum / anaerobic", lo: 0.90, hi: 1.00 },
+];
+
+let hrRows = [];
+
+async function loadHeartRate() {
+  const rows = await loadCSV("data/heart_rate.csv");
+  hrRows = rows
+    .map((r) => ({
+      date: r.date,
+      resting_hr: parseFloat(r.resting_hr),
+      max_hr: parseFloat(r.max_hr),
+      notes: r.notes,
+    }))
+    .filter((r) => r.date && Number.isFinite(r.resting_hr) && Number.isFinite(r.max_hr))
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+function karvonenZone(restingHr, maxHr, lo, hi) {
+  const reserve = maxHr - restingHr;
+  const loBpm = Math.round(reserve * lo + restingHr);
+  const hiBpm = Math.round(reserve * hi + restingHr);
+  return { loBpm, hiBpm };
+}
+
+function renderHeartRateZones(dateStr) {
+  const zonesEl = document.getElementById("hrz-zones");
+  const restingEl = document.getElementById("hrz-resting");
+  const maxEl = document.getElementById("hrz-max");
+  zonesEl.innerHTML = "";
+
+  const entry = hrRows.find((r) => r.date === dateStr);
+  if (!entry) {
+    restingEl.textContent = "—";
+    maxEl.textContent = "—";
+    zonesEl.innerHTML = `<div class="hrz-empty">No data for this date</div>`;
+    return;
+  }
+
+  restingEl.textContent = `${entry.resting_hr} bpm`;
+  maxEl.textContent = `${entry.max_hr} bpm`;
+
+  HR_ZONES.forEach((z) => {
+    const { loBpm, hiBpm } = karvonenZone(entry.resting_hr, entry.max_hr, z.lo, z.hi);
+    const card = document.createElement("div");
+    card.className = `hrz-card hrz-${z.key}`;
+    card.innerHTML = `
+      <div class="hrz-card-head">
+        <span class="hrz-card-label">${z.label}</span>
+        <span class="hrz-card-pct">${Math.round(z.lo * 100)}&ndash;${Math.round(z.hi * 100)}% HRR</span>
+      </div>
+      <div class="hrz-card-range">${loBpm}&ndash;${hiBpm} <span class="hrz-card-unit">bpm</span></div>
+      <div class="hrz-card-desc">${z.desc}</div>
+    `;
+    zonesEl.appendChild(card);
+  });
+}
+
+function initHeartRateZones() {
+  const select = document.getElementById("hrz-date");
+  select.innerHTML = "";
+
+  if (!hrRows.length) {
+    document.getElementById("hrz-zones").innerHTML = `<div class="hrz-empty">No data logged yet</div>`;
+    return;
+  }
+
+  hrRows.forEach((r) => {
+    const opt = document.createElement("option");
+    opt.value = r.date;
+    opt.textContent = r.date;
+    select.appendChild(opt);
+  });
+
+  select.value = hrRows[hrRows.length - 1].date;
+  select.addEventListener("change", () => renderHeartRateZones(select.value));
+  renderHeartRateZones(select.value);
+}
+
+// ---------- heart rate editing (owner-only, via GitHub Contents API) ----------
+
+const HR_FILE = "data/heart_rate.csv";
+
+function previousHrEntry(dateStr) {
+  return hrRows
+    .filter((r) => r.date < dateStr)
+    .sort((a, b) => b.date.localeCompare(a.date))[0] || null;
+}
+
+function renderHrExistingEntries() {
+  const list = document.getElementById("hr-entry-list");
+  if (!hrRows.length) {
+    list.innerHTML = `<div class="entry-empty">No entries logged yet.</div>`;
+    return;
+  }
+  list.innerHTML = hrRows
+    .slice()
+    .reverse()
+    .map((r) => {
+      const notesText = r.notes ? ` — ${r.notes}` : "";
+      return `
+        <div class="entry-row" data-date="${r.date}">
+          <span class="entry-row-main">${r.date}: rest ${r.resting_hr} / max ${r.max_hr}<span class="entry-row-notes">${notesText}</span></span>
+          <button class="entry-delete-btn" data-date="${r.date}">Delete</button>
+        </div>`;
+    })
+    .join("");
+}
+
+function checkHrDateConflict() {
+  const dateStr = document.getElementById("hr-entry-date").value;
+  const warnEl = document.getElementById("hr-entry-warning");
+  const saveBtn = document.getElementById("hr-entry-save");
+  const existing = hrRows.find((r) => r.date === dateStr);
+
+  document.querySelectorAll("#hr-entry-list .entry-row").forEach((el) => {
+    el.classList.toggle("highlight", el.dataset.date === dateStr && !!existing);
+  });
+
+  if (existing) {
+    warnEl.textContent = `An entry for ${dateStr} already exists (rest ${existing.resting_hr} / max ${existing.max_hr}). Delete it below before adding a new value.`;
+    warnEl.classList.add("visible");
+    saveBtn.disabled = true;
+  } else {
+    warnEl.textContent = "";
+    warnEl.classList.remove("visible");
+    saveBtn.disabled = false;
+  }
+}
+
+function openHrEntryModal() {
+  document.getElementById("hr-entry-date").value = new Date().toISOString().slice(0, 10);
+  document.getElementById("hr-entry-resting").value = "";
+  document.getElementById("hr-entry-max").value = "";
+  document.getElementById("hr-entry-notes").value = "";
+  document.getElementById("hr-entry-error").textContent = "";
+  renderHrExistingEntries();
+  checkHrDateConflict();
+  document.getElementById("hr-entry-modal").classList.add("open");
+}
+
+function closeHrEntryModal() {
+  document.getElementById("hr-entry-modal").classList.remove("open");
+}
+
+async function commitHrEntry(dateStr, restingStr, maxStr, notes) {
+  const token = getToken();
+  if (!token) throw new Error("Unlock editing first (see header).");
+
+  const apiUrl = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${HR_FILE}?ref=${BRANCH}`;
+  const authHeaders = {
+    Authorization: `Bearer ${token}`,
+    Accept: "application/vnd.github+json",
+  };
+
+  const getRes = await fetch(apiUrl, { headers: authHeaders });
+  if (!getRes.ok) {
+    if (getRes.status === 401) throw new Error("Invalid or expired token.");
+    if (getRes.status === 403) throw new Error("Token lacks permission for this repo.");
+    throw new Error(`Could not read ${HR_FILE} (${getRes.status}).`);
+  }
+  const fileData = await getRes.json();
+  const text = b64DecodeUtf8(fileData.content);
+  const headers = splitCSVLine(text.trim().split(/\r?\n/)[0]);
+  const rows = parseCSV(text);
+
+  if (rows.some((r) => r.date === dateStr)) {
+    throw new Error(`An entry for ${dateStr} already exists. Delete it first, then add the new value.`);
+  }
+
+  const prev = previousHrEntry(dateStr);
+  let restingVal = restingStr.trim() === "" ? null : parseFloat(restingStr);
+  let maxVal = maxStr.trim() === "" ? null : parseFloat(maxStr);
+
+  if (restingVal === null) {
+    if (!prev) throw new Error("No previous entry to carry forward a resting HR from — please enter a value.");
+    restingVal = prev.resting_hr;
+  }
+  if (maxVal === null) {
+    if (!prev) throw new Error("No previous entry to carry forward a max HR from — please enter a value.");
+    maxVal = prev.max_hr;
+  }
+  if (!Number.isFinite(restingVal) || !Number.isFinite(maxVal)) {
+    throw new Error("Resting HR and max HR must be numeric.");
+  }
+
+  const row = { date: dateStr, resting_hr: String(restingVal), max_hr: String(maxVal), notes: notes || "" };
+  rows.push(row);
+  rows.sort((a, b) => a.date.localeCompare(b.date));
+
+  const newContent = buildCSV(headers, rows);
+  const putRes = await fetch(apiUrl, {
+    method: "PUT",
+    headers: { ...authHeaders, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: `Log heart rate: rest ${restingVal} / max ${maxVal} on ${dateStr}`,
+      content: b64EncodeUtf8(newContent),
+      sha: fileData.sha,
+      branch: BRANCH,
+    }),
+  });
+  if (!putRes.ok) {
+    const body = await putRes.json().catch(() => ({}));
+    throw new Error(body.message || `Save failed (${putRes.status}).`);
+  }
+}
+
+async function deleteHrEntry(dateStr) {
+  const token = getToken();
+  if (!token) throw new Error("Unlock editing first (see header).");
+
+  const apiUrl = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${HR_FILE}?ref=${BRANCH}`;
+  const authHeaders = {
+    Authorization: `Bearer ${token}`,
+    Accept: "application/vnd.github+json",
+  };
+
+  const getRes = await fetch(apiUrl, { headers: authHeaders });
+  if (!getRes.ok) {
+    if (getRes.status === 401) throw new Error("Invalid or expired token.");
+    if (getRes.status === 403) throw new Error("Token lacks permission for this repo.");
+    throw new Error(`Could not read ${HR_FILE} (${getRes.status}).`);
+  }
+  const fileData = await getRes.json();
+  const text = b64DecodeUtf8(fileData.content);
+  const headers = splitCSVLine(text.trim().split(/\r?\n/)[0]);
+  const rows = parseCSV(text);
+
+  const remaining = rows.filter((r) => r.date !== dateStr);
+  if (remaining.length === rows.length) {
+    throw new Error(`No entry found for ${dateStr} — it may have already been deleted.`);
+  }
+
+  const newContent = buildCSV(headers, remaining);
+  const putRes = await fetch(apiUrl, {
+    method: "PUT",
+    headers: { ...authHeaders, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: `Delete heart rate entry for ${dateStr}`,
+      content: b64EncodeUtf8(newContent),
+      sha: fileData.sha,
+      branch: BRANCH,
+    }),
+  });
+  if (!putRes.ok) {
+    const body = await putRes.json().catch(() => ({}));
+    throw new Error(body.message || `Delete failed (${putRes.status}).`);
+  }
+}
+
+async function handleHrEntrySave() {
+  const errorEl = document.getElementById("hr-entry-error");
+  errorEl.textContent = "";
+
+  const dateStr = document.getElementById("hr-entry-date").value;
+  const restingStr = document.getElementById("hr-entry-resting").value;
+  const maxStr = document.getElementById("hr-entry-max").value;
+  const notes = document.getElementById("hr-entry-notes").value;
+
+  if (!dateStr) { errorEl.textContent = "Date is required."; return; }
+  if (hrRows.some((r) => r.date === dateStr)) {
+    errorEl.textContent = `An entry for ${dateStr} already exists. Delete it first.`;
+    return;
+  }
+
+  const saveBtn = document.getElementById("hr-entry-save");
+  saveBtn.disabled = true;
+  saveBtn.textContent = "Saving…";
+  try {
+    await commitHrEntry(dateStr, restingStr, maxStr, notes);
+    closeHrEntryModal();
+    await loadHeartRate();
+    initHeartRateZones();
+  } catch (err) {
+    errorEl.textContent = err.message || "Save failed.";
+  } finally {
+    saveBtn.disabled = false;
+    saveBtn.textContent = "Save to GitHub";
+  }
+}
+
+async function handleHrEntryDelete(dateStr) {
+  const errorEl = document.getElementById("hr-entry-error");
+  errorEl.textContent = "";
+  if (!confirm(`Delete the heart rate entry for ${dateStr}? This can't be undone.`)) return;
+
+  try {
+    await deleteHrEntry(dateStr);
+    await loadHeartRate();
+    initHeartRateZones();
+    renderHrExistingEntries();
+    checkHrDateConflict();
+  } catch (err) {
+    errorEl.textContent = err.message || "Delete failed.";
+  }
+}
+
+function initHrEditing() {
+  document.getElementById("hrz-add-btn").addEventListener("click", openHrEntryModal);
+  document.getElementById("hr-entry-cancel").addEventListener("click", closeHrEntryModal);
+  document.getElementById("hr-entry-save").addEventListener("click", handleHrEntrySave);
+  document.getElementById("hr-entry-date").addEventListener("change", checkHrDateConflict);
+  document.getElementById("hr-entry-list").addEventListener("click", (e) => {
+    const btn = e.target.closest(".entry-delete-btn");
+    if (btn) handleHrEntryDelete(btn.dataset.date);
+  });
+  document.getElementById("hr-entry-modal").addEventListener("click", (e) => {
+    if (e.target.id === "hr-entry-modal") closeHrEntryModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeHrEntryModal();
+  });
+}
+
 const BLOCK_START = "2026-08-17"; // W1D1
 const RACE_DAY = "2027-08-01"; // W50D7
 
@@ -941,6 +1263,9 @@ function initEditing() {
   initEditing();
   await loadGameTime();
   initGameTime();
+  await loadHeartRate();
+  initHeartRateZones();
+  initHrEditing();
   await renderStats(targets);
   await initCalendar();
 })();
