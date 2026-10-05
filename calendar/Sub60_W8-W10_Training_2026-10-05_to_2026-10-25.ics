@@ -1,0 +1,328 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//OpenAI//Sub60 Training Plan//CN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sub60 W8-W10 Training
+BEGIN:VEVENT
+UID:20261005-39e51131-146f-4109-a720-a82fb90bef2c@sub60.openai
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:W8D1｜休息日
+DESCRIPTION:目标：完全恢复，为W8首次受控跑步强度做准
+ 备。\n• 不安排正式训练。\n• 可选：10–15分钟非常轻
+ 松活动度/拉伸。\n• 不补做上周遗漏训练。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261006-54a0fd33-bed0-41b4-b890-0d357253d1d4@sub60.openai
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261007
+SUMMARY:W8D2｜游泳 1700yd + 受控跑 55min
+DESCRIPTION:游泳｜约1700 yd｜RPE 2–4\n1) 300 yd easy：自由泳
+ ，RPE 2–3，专注放松呼气。\n2) 4×50 yd drill：25 yd catch-up 
+ + 25 yd正常游；每组休15秒。\n3) 4×50 yd build：每50从RPE 3
+ 逐步到RPE 5；每组休20秒。\n4) 6×100 yd aerobic：目标约2:02
+ –2:07/100 yd（约CSS+10–15秒）；每组休15秒。\n5) 4×50 yd pu
+ ll buoy：轻松到中等，RPE 3–4；每组休15秒。\n6) 200 yd very
+  easy cool-down。\n器材：可用夹板完成第5组；本课不需要
+ 脚蹼或手蹼。\n\n跑步｜55 min\n• 15 min easy，RPE 2–3。\n
+ • 3×6 min comfortably hard，RPE 5–6；每组之间2 min easy jog。
+ \n• 余下时间easy cool-down，使总时长达到55 min。\n要求：
+ 强度可控，不做5K比赛配速冲刺；最后一组应仍能保持
+ 动作稳定。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261007-04897756-df38-463e-80a4-ea7adfe9e134@sub60.openai
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+SUMMARY:W8D3｜自行车 85–90min + Strength A 30min
+DESCRIPTION:自行车｜85–90 min\n• 15 min easy warm-up，RPE 2–3
+ 。\n• 3×10 min steady/tempo，RPE 5；组间5 min easy。\n• 剩余
+ 时间Z2 easy-steady，最后10 min放松。\n若使用与FTP测试相同
+ 的功率设备：主组约75–85% FTP；不要跨设备比较绝对瓦
+ 数。\n\nStrength A｜约30 min｜RPE 6左右，保留2–3次余力\n
+ • Goblet squat 3×8\n• Romanian deadlift 3×8\n• Split squat 2×8/
+ 腿\n• Standing calf raise 2×12\n• Side plank 2×30–40秒/侧\n组
+ 间休45–75秒。不要练到力竭。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261008-2a457521-d338-4686-884e-a4c420036ebe@sub60.openai
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:W8D4｜游泳主课 + Easy Run 35–40min
+DESCRIPTION:游泳｜约1900 yd\n1) 300 yd easy，RPE 2–3。\n2) 4×50 
+ yd drill：25 fingertip drag + 25正常游；每组休15秒。\n3) 6×150
+  yd aerobic/steady：每组2:58–3:04；每组休20秒。目标是均匀
+ ，不要前快后崩。\n4) 6×50 yd controlled fast：每组0:55–0:58
+ ；每组休25秒。RPE约6，动作优先。\n5) 200 yd very easy cool-d
+ own。\n器材：本课以纯游为主；无需脚蹼/手蹼。若肩膀
+ 状态好，第2组可使用短脚蹼辅助技术，但不是必须。\n\
+ n跑步｜35–40 min easy\n• 全程RPE 2–3，可完整对话。\n•
+  不加strides，不追配速。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261009-42994ce1-b1f6-4ff7-8f9d-12f5371a0635@sub60.openai
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:W8D5｜Easy Bike 60min + Strength B 25min
+DESCRIPTION:自行车｜60 min easy\n• 10 min very easy。\n• 40 min 
+ Z2舒适有氧，RPE 3–4。\n• 10 min very easy cool-down。\n保持
+ 高踏频、低肌肉压力；不追加tempo。\n\nStrength B｜约25 min
+ ｜RPE 6左右\n• Hip thrust / glute bridge 3×10\n• Step-up 2×8/腿
+ \n• Single-leg RDL 2×8/腿\n• Pallof press 2×10/侧\n• Dead bug 2
+ ×8/侧\n组间休45–60秒；不练到力竭。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261010-403e901d-c982-4c99-86bb-7eec1a708b52@sub60.openai
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:W8D6｜长骑 2h10 + Brick Run 18min
+DESCRIPTION:自行车｜2 h 10 min\n• 20 min easy进入状态。\n• 
+ 主体保持Z2，RPE 3–4。\n• 其中安排3×15 min aero steady，RP
+ E 4；组间至少10 min easy Z2。\n• 最后15 min放松。\n补给练
+ 习：骑行超过90分钟，按既定比赛补给策略练习，不尝
+ 试全新食品。\n\nBrick Run｜18 min\n• 前6 min非常轻松，专
+ 注步频和姿势。\n• 中间8 min自然easy-steady，RPE 3–4。\n
+ • 最后4 min easy。\n不要追pace。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261011-2d087e84-e419-473c-b4ef-8a423635fe6c@sub60.openai
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+SUMMARY:W8D7｜长跑 70min + 可选恢复游
+DESCRIPTION:长跑｜70 min easy\n• 前15 min RPE 2–3。\n• 中间4
+ 5 min稳定easy，RPE 3–4。\n• 最后10 min放松。\n全程保持
+ 能说完整句子的强度；不做progression finish。\n\n可选恢复
+ 游｜30–40 min\n• 200 easy\n• 6×50 relaxed drill / swim交替，
+ 每组休15秒\n• 6×100 easy aerobic，每组休15–20秒\n• 100–
+ 200 very easy\n若累就直接取消恢复游。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261012-654c5abb-7fb0-42d8-aaaa-e5daebc9d04b@sub60.openai
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:W9D1｜休息日
+DESCRIPTION:目标：进入本阶段Peak Week。\n• 完全休息。\n
+ • 可选10–15分钟活动度。\n• 睡眠和正常碳水摄入优
+ 先。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261013-ea65574b-a46b-459e-97f9-1f99533a7fe3@sub60.openai
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:W9D2｜游泳 1900yd + Easy Run 50min + Strides
+DESCRIPTION:游泳｜1900 yd\n1) 300 yd easy，RPE 2–3。\n2) 4×50 yd 
+ drill：25 scull + 25 swim；每组休15秒。\n3) 12×100 yd @ 1:55–1:
+ 59；每组休20秒。RPE约5，前8组必须克制。\n4) 200 yd very ea
+ sy cool-down。\n器材：主组纯游；不使用手蹼。技术组可
+ 选短脚蹼。\n\n跑步｜50 min\n• 40–42 min easy，RPE 2–3。\n
+ • 4–6×20秒 strides：快但放松，约1500m–5K动作感觉；每
+ 次之间60–90秒走/慢跑完全恢复。\n• 剩余时间easy cool-d
+ own。\nStrides不是冲刺。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261014-09a4d6d7-62a5-4fca-909b-c3f2a048fd90@sub60.openai
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261015
+SUMMARY:W9D3｜自行车质量课 90min + Strength A 30min
+DESCRIPTION:自行车｜90 min\n• 15 min warm-up：由RPE 2逐步到3
+ –4。\n• 3×12 min steady/tempo，RPE 5–6；组间5 min very easy
+ 。\n• 其余时间Z2，最后10 min easy。\n如果使用同一功率
+ 设备：主组约80–88% FTP，宁可低一点也不要做成阈值课
+ 。\n\nStrength A｜30 min\n• Goblet squat 3×8\n• Romanian deadlift 
+ 3×8\n• Split squat 2×8/腿\n• Standing calf raise 2×12\n• Side p
+ lank 2×30–40秒/侧\n组间休45–75秒，全部保留2–3次余力
+ 。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261015-c39ee2ca-4bff-4f74-9490-081a03c080b3@sub60.openai
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:W9D4｜Aerobic Swim 1750yd + Easy Run 40min
+DESCRIPTION:游泳｜1750 yd｜以恢复性有氧为主\n1) 300 yd easy
+ ，RPE 2–3。\n2) 4×50 yd drill：25 catch-up + 25正常游；每组
+ 休15秒。\n3) 8×100 yd aerobic：约2:02–2:07/100 yd；每组休15
+ 秒。\n4) 4×50 yd pull buoy：RPE 3–4；每组休15秒。\n5) 4×25 y
+ d fast-relaxed：RPE 6，动作干净；每组休25秒。\n6) 150 yd very
+  easy cool-down。\n器材：夹板用于第4组；不需要手蹼。短
+ 脚蹼可选用于drill。\n\n跑步｜40 min easy\n• 全程RPE 2–3
+ 。\n• 不加任何tempo。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261016-647aa65c-4246-4cc0-8970-e3ac73047c39@sub60.openai
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:W9D5｜Easy Bike 60min + Strength B 25min
+DESCRIPTION:自行车｜60 min\n• 10 min very easy。\n• 40 min Z2，
+ RPE 3–4。\n• 10 min very easy。\n以恢复和保持频率为目的
+ 。\n\nStrength B｜25 min\n• Hip thrust / glute bridge 3×10\n• Step
+ -up 2×8/腿\n• Single-leg RDL 2×8/腿\n• Pallof press 2×10/侧\n
+ • Dead bug 2×8/侧\n不练到酸痛明显或影响周末长骑。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261017-bb7990aa-accd-44af-8317-cb6abc9b7b3d@sub60.openai
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:W9D6｜Peak长骑 2h15 + Brick Run 20min
+DESCRIPTION:自行车｜2 h 15 min\n• 20 min easy warm-up。\n• 主
+ 体Z2，RPE 3–4。\n• 2×20 min aero steady，RPE 4；组间至少15 
+ min easy Z2。\n• 最后20 min easy。\n目标：稳定、有氧、空
+ 气动力姿势适应，不做FTP测试。\n\nBrick Run｜20 min\n• 10 
+ min easy，RPE 2–3。\n• 10 min natural steady，RPE 4。\n不要追p
+ ace；结束时应仍有余力。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261018-ad31c758-5caf-4832-83c1-d6a7495c8c4a@sub60.openai
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:W9D7｜长跑 70min + 可选恢复游
+DESCRIPTION:长跑｜70 min easy\n• 全程RPE 2–3，最多短暂到4
+ 。\n• 前15 min刻意压慢。\n• 中段保持自然稳定。\n• 
+ 最后10 min不加速。\n这是Peak Week最后一天，完成即可。\n
+ \n可选恢复游｜约1000–1200 yd\n• 200 easy\n• 4×50 drill，
+ 每组休15秒\n• 6×100 very easy aerobic，每组休15–20秒\n• 2
+ 00 easy\n疲劳明显时直接取消。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261019-cdbcc855-da68-471b-9cbf-8ed2720bf6fd@sub60.openai
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:W10D1｜Deload休息日
+DESCRIPTION:体测周开始。\n• 完全休息。\n• 可做10分钟
+ 轻松活动度。\n• 不补训练，不做力量。\n目标：让疲
+ 劳下降，而不是继续堆训练量。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261020-c1070419-2778-4533-a54b-142c59906580@sub60.openai
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+SUMMARY:W10D2｜CSS体测｜400yd + 200yd
+DESCRIPTION:CSS TEST｜25 yd池｜总量约1700 yd\n\n热身\n1) 400 yd e
+ asy：RPE 2–3，前200非常轻松，后200逐渐找到节奏。\n2) 4
+ ×50 yd build：每50逐步从RPE 3到RPE 5；每组休20秒。\n3) 4×25
+  yd fast-relaxed：约RPE 6–7，快速但不冲刺；每组休30秒。\
+ n4) 200 yd easy，最后50非常轻松。\n5) 静息2–3分钟，准备
+ 测试。\n\n测试1｜400 yd TT\n• 前100 yd控制，约RPE 7。\n• 
+ 中间200 yd稳定在RPE 8。\n• 最100 yd逐渐全力，最后50可到
+ RPE 9–10。\n• 记录总时间，并尽量记录每100 split。\n\n
+ 测试间恢复\n• 8–12分钟。\n• 其中前3–5分钟完全休
+ 息/轻松走动；然后100–200 yd very easy可选。\n• 必须等
+ 呼吸和心率明显恢复后再开始200。\n\n测试2｜200 yd TT\n•
+  前50 yd不要冲过头。\n• 中间100 yd保持最高可持续速度
+ 。\n• 最50 yd全力完成。\n• 记录总时间及每50 split。\n\
+ n冷身\n• 200 yd very easy。\n计算：CSS pace/100 yd = (400yd时间
+ 秒数 − 200yd时间秒数) ÷ 2。\n器材：测试主段不使用脚
+ 蹼、夹板或手蹼。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261021-40fb187d-5acf-4226-bdb4-dd09acdf528d@sub60.openai
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:W10D3｜恢复骑 50–60min + 轻核心 20min
+DESCRIPTION:自行车｜50–60 min\n• 全程RPE 2–3。\n• 轻松
+ 踩，高踏频，绝不做tempo。\n• 最后10 min very easy。\n\n轻
+ 核心/激活｜最多20 min\n• Glute bridge 2×10\n• Bodyweight spli
+ t squat 2×6/腿\n• Dead bug 2×6/侧\n• Side plank 2×20–30秒/侧
+ \n只做激活，不制造酸痛。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261022-21baa01a-507f-40a2-916a-f1f3094c9f20@sub60.openai
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:W10D4｜5K体测
+DESCRIPTION:5K BENCHMARK\n\n热身｜约20–25 min\n1) 12–15 min easy 
+ jog，RPE 2–3。\n2) 动态动作：\n   • Leg swings 前后/左右 
+ 各10次/腿\n   • Walking lunge 8次/腿\n   • A-skip 或高抬腿 2
+ ×20 m\n   • Butt kicks 2×20 m\n3) 4×20秒 strides：\n   • 第1次
+ 约10K感觉\n   • 第2–3次约5K感觉\n   • 第4次略快于5K但
+ 仍放松\n   • 每次之间60–90秒走/慢跑完全恢复\n4) 2–3 
+ min easy jog，然后开始测试。\n\n5K测试\n• 第1 km：克制，
+ RPE 7左右。\n• 第2–4 km：稳定在RPE 8–9，尽量均匀split
+ 。\n• 最1 km：逐渐加压；最后400–600 m根据状态全力。\
+ n记录：总时间、每km或mile split、平均HR、最高HR、cadence
+ 、RPE。\n\n冷身\n• 10–15 min very easy jog/walk。\n不要在测
+ 试后补额外训练。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261023-367e8903-0fa5-46ff-8f3e-29c946021326@sub60.openai
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:W10D5｜休息 / 可选恢复游 20–30min
+DESCRIPTION:首选：完全休息。\n\n若身体感觉良好，可选恢
+ 复游20–30 min：\n• 200 yd easy\n• 4×50 yd relaxed drill；休15
+ 秒\n• 4–6×100 yd very easy aerobic；休15–20秒\n• 100–200 y
+ d easy\n全程RPE 2–3，不做快速组。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261024-530a13ca-8ef5-43eb-894c-c36844ace81c@sub60.openai
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:W10D6｜自行车20min Benchmark
+DESCRIPTION:BIKE BENCHMARK｜建议使用与之前基准相同的设备\n
+ \n热身｜约25–30 min\n1) 10 min easy，RPE 2–3。\n2) 5 min steady
+ ，RPE 4。\n3) 3×1 min strong，RPE 6–7；每次之间2 min easy。\n
+ 4) 3×20秒 fast spin / high cadence，RPE 6；每次之间60秒easy。\n
+ 5) 5 min very easy。\n6) 2–3 min安静准备，补一小口水。\n\n2
+ 0 min测试\n• 前3 min：强但克制，RPE 7–8。\n• 中间14 min
+ ：最高可持续稳定输出，RPE 8–9。\n• 最3 min：逐步加
+ 压，最后1 min尽可能完成。\n不要前5分钟过度冲高。\n记
+ 录：20 min平均功率、平均HR、最大HR、平均cadence、RPE。\n
+ 若用传统20 min FTP估算，可记录0.95×20min平均功率作为参
+ 考，但优先和同设备历史数据比较。\n\n冷身\n• 15–20 m
+ in very easy spin。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261025-995920d4-0257-44cb-b237-c9152cb9e4bd@sub60.openai
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:W10D7｜恢复骑45–60min 或完全休息
+DESCRIPTION:二选一：\nA) 45–60 min recovery bike：全程RPE 2，
+ 轻松踩，不看速度。\nB) 若腿部沉重、睡眠差或测试后
+ 疲劳明显：完全休息。\n\n当天整理W10数据：\n• Swim：40
+ 0yd、200yd、CSS\n• Run：5K总时间、splits、HR、RPE\n• Bike：
+ 20min平均功率、HR、cadence、RPE\n这些数据用于更新W11–W16
+ 训练区间。
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

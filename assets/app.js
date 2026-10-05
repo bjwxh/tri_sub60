@@ -765,7 +765,7 @@ function unescapeICS(s) {
 }
 
 function parseICS(text) {
-  const lines = text.split(/\r?\n/);
+  const lines = text.replace(/\r?\n[ \t]/g, "").split(/\r?\n/);
   const events = [];
   let cur = null;
   for (const line of lines) {
