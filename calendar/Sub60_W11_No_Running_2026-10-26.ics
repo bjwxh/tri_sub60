@@ -1,0 +1,109 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//sub60//Week 11 Triathlon Training//ZH-CN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:50周铁三训练 W11 (无跑步)
+X-WR-CALDESC:2026年10月26日至11月1日，游泳骑行与每日PT康
+ 复
+BEGIN:VEVENT
+UID:w11-2026-10-26-c629707b-17e1-47fc-b1fe-279e78dcb663@sub60
+DTSTAMP:20261025T225142Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:W11D1｜休息 + PT康复
+DESCRIPTION:休息日；不安排游泳、骑车或跑步。\n按物理
+ 治疗师要求完成每日康复练习。\n\n安全：以PT批准和
+ 疼痛反应为准；运动中或次日症状加重即减量或停止
+ ；所有测试推迟到恢复跑步后同一周。
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-2026-10-27-d8366451-193b-4a04-9502-c460c5dc864a@sub60
+DTSTAMP:20261025T225142Z
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261028
+SUMMARY:W11D2｜游泳 2200 yd + 骑车 30min Z1
+DESCRIPTION:游泳 2200 yd（约60min）：\n热身 300 yd 自由泳\n6
+ ×50 yd 技术练习，间休20秒（300）\n4×300 yd 有氧，RPE 3
+ –4，间休30秒（1200）\n4×50 yd 轻松技术游，间休15秒（
+ 200）\n放松 200 yd\n\n骑车 30min Z1，RPE 2，坐姿轻齿比。\n
+ 每日PT康复练习。勿跑步；游泳轻蹬壁、不做高强度打
+ 腿。\n\n安全：以PT批准和疼痛反应为准；运动中或次
+ 日症状加重即减量或停止；所有测试推迟到恢复跑步
+ 后同一周。
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-2026-10-28-769c3db6-aa56-4304-a751-8e558c14eb81@sub60
+DTSTAMP:20261025T225142Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:W11D3｜骑车 75min 有氧
+DESCRIPTION:骑车75min：15min Z1热身 + 50min 低Z2（RPE 3） + 10mi
+ n Z1放松。\n全程坐姿、轻齿比，避免爬坡、高扭矩和
+ 冲刺。\n完成每日PT康复练习；不跑步。\n\n安全：以PT
+ 批准和疼痛反应为准；运动中或次日症状加重即减量
+ 或停止；所有测试推迟到恢复跑步后同一周。
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-2026-10-29-7bb5121a-cf01-4bf9-a4a8-befd68051cd0@sub60
+DTSTAMP:20261025T225142Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:W11D4｜游泳 2400 yd
+DESCRIPTION:游泳2400 yd（约65min）：\n热身 400 yd 轻松\n4×50 
+ yd 技术游，间休20秒（200）\n5×300 yd 稳定有氧，RPE 3–4
+ ，间休30秒（1500）\n4×50 yd 轻松自由泳，间休15秒（200
+ ）\n放松 100 yd\n\n每日PT康复练习；轻蹬壁，避免爆发
+ 打腿或CSS测试。\n\n安全：以PT批准和疼痛反应为准；
+ 运动中或次日症状加重即减量或停止；所有测试推迟
+ 到恢复跑步后同一周。
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-2026-10-30-4dd07173-7dae-4d4e-ad41-532ffb649be2@sub60
+DTSTAMP:20261025T225142Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:W11D5｜游泳 1800 yd + 骑车 30min Z1
+DESCRIPTION:游泳1800 yd（约50min）：\n热身 300 yd\n6×50 yd 技
+ 术练习，间休20秒（300）\n3×300 yd 轻松有氧，RPE 3，间
+ 休30秒（900）\n4×50 yd 放松游，间休15秒（200）\n放松 10
+ 0 yd\n\n骑车30min Z1恢复骑，轻松坐姿。\n每日PT康复练习
+ ；不跑步。\n\n安全：以PT批准和疼痛反应为准；运动
+ 中或次日症状加重即减量或停止；所有测试推迟到恢
+ 复跑步后同一周。
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-2026-10-31-b163dfe4-e2eb-43f3-a452-a279e70e549d@sub60
+DTSTAMP:20261025T225142Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:W11D6｜长骑 150min Z1–低Z2
+DESCRIPTION:长骑150min（2h30min）：\n15min Z1热身\n120min Z1–
+ 低Z2（RPE 2–3），稳定轻齿比、全程坐姿\n15min Z1放松\n
+ 避免冲刺、站姿、高扭矩和硬爬坡。按平时长距离骑
+ 行安排补水与补碳。\n每日PT康复练习。若近期2h骑行
+ 后小腿并非完全耐受，请缩至120min或更短。\n\n安全：
+ 以PT批准和疼痛反应为准；运动中或次日症状加重即减
+ 量或停止；所有测试推迟到恢复跑步后同一周。
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-2026-11-01-4297463d-892f-4927-b542-156529e419f0@sub60
+DTSTAMP:20261025T225142Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:W11D7｜游泳 2000 yd
+DESCRIPTION:游泳2000 yd（约65min）：\n热身 300 yd\n3×400 yd 平
+ 稳有氧，RPE 3，间休30秒（1200）\n4×100 yd 轻松技术游，
+ 间休20秒（400）\n放松 100 yd\n\n每日PT康复练习；不跑步
+ 。\n\n安全：以PT批准和疼痛反应为准；运动中或次日
+ 症状加重即减量或停止；所有测试推迟到恢复跑步后
+ 同一周。
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
