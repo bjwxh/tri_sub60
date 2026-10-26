@@ -754,6 +754,112 @@ function drawChart(canvas, parsed, target) {
   });
 }
 
+// ---------- weekly volume ----------
+
+const VOL_SPORTS = [
+  { key: "swim_yd",      label: "Swim",     color: "var(--series-1)", unit: "yd" },
+  { key: "bike_min",     label: "Bike",     color: "var(--series-3)", unit: "h" },
+  { key: "run_min",      label: "Run",      color: "var(--series-2)", unit: "h" },
+  { key: "strength_min", label: "Strength", color: "var(--series-5)", unit: "h" },
+];
+const VOL_PLAN_START = "2026-08-17"; // Monday of W1
+
+function localDateStr(d) {
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+function mondayOf(dateStr) {
+  const d = new Date(dateStr + "T00:00:00");
+  d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+  return localDateStr(d);
+}
+
+function addDays(dateStr, n) {
+  const d = new Date(dateStr + "T00:00:00");
+  d.setDate(d.getDate() + n);
+  return localDateStr(d);
+}
+
+function fmtHours(min) {
+  const h = Math.floor(min / 60);
+  const m = Math.round(min % 60);
+  return h ? `${h}h ${String(m).padStart(2, "0")}m` : `${m}m`;
+}
+
+const SWIM_YD_PER_MIN = 37; // all-in pace incl. rests, from the plan's stated durations
+
+function swimMin(yd) { return yd / SWIM_YD_PER_MIN; }
+
+function volValue(sport, v) {
+  return sport.unit === "yd"
+    ? `${Math.round(v).toLocaleString()} yd <span class="vol-est">~${fmtHours(swimMin(v))}</span>`
+    : fmtHours(v);
+}
+
+function renderVolume(byDate, weekStart) {
+  const days = Array.from({ length: 7 }, (_, i) => {
+    const date = addDays(weekStart, i);
+    const row = byDate[date] || {};
+    const v = Object.fromEntries(VOL_SPORTS.map((s) => [s.key, Number(row[s.key]) || 0]));
+    // minutes per sport for this day (swim estimated from yards)
+    const min = Object.fromEntries(VOL_SPORTS.map((s) => [s.key, s.unit === "yd" ? swimMin(v[s.key]) : v[s.key]]));
+    return { date, dow: DOW[i], v, min, totalMin: VOL_SPORTS.reduce((a, s) => a + min[s.key], 0) };
+  });
+  const total = (key) => days.reduce((a, d) => a + d.v[key], 0);
+
+  const weekNum = Math.round((new Date(weekStart + "T00:00:00") - new Date(VOL_PLAN_START + "T00:00:00")) / (7 * 864e5)) + 1;
+  const fmt = (ds) => new Date(ds + "T00:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  document.getElementById("vol-label").textContent = `W${weekNum} \u00b7 ${fmt(weekStart)} \u2013 ${fmt(addDays(weekStart, 6))}`;
+
+  // text summary
+  const totalMin = days.reduce((a, d) => a + d.totalMin, 0);
+  const tile = (label, value, color) =>
+    `<div class="vol-tile"><div class="vol-tile-label">${color ? `<span class="vol-dot" style="background:${color}"></span>` : ""}${label}</div><div class="vol-tile-value">${value}</div></div>`;
+  document.getElementById("vol-summary").innerHTML =
+    tile("Total training time", fmtHours(totalMin)) +
+    VOL_SPORTS.map((s) => tile(s.label, volValue(s, total(s.key)), s.color)).join("");
+
+  // one stacked chart of daily hours; swim time is estimated from yards
+  const maxMin = Math.max(...days.map((d) => d.totalMin), 1);
+  const cols = days.map((d) => {
+    const segs = VOL_SPORTS.filter((s) => d.min[s.key] > 0)
+      .map((s) => `<div class="vol-seg" style="height:${(d.min[s.key] / maxMin) * 100}%;background:${s.color}" title="${s.label}: ${s.unit === "yd" ? `${Math.round(d.v[s.key]).toLocaleString()} yd, ~` : ""}${fmtHours(d.min[s.key])}"></div>`)
+      .join("");
+    const swimLine = d.v.swim_yd ? `<div class="vol-day-val">${Math.round(d.v.swim_yd).toLocaleString()} yd</div>` : "";
+    return `<div class="vol-col"><div class="vol-bar-area">${segs}</div><div class="vol-day">${d.dow}</div><div class="vol-day-val">${d.totalMin ? fmtHours(d.totalMin) : "\u2013"}</div>${swimLine}</div>`;
+  }).join("");
+
+  const legend = VOL_SPORTS.map((s) => `<span><span class="vol-dot" style="background:${s.color}"></span>${s.label}</span>`).join("");
+  document.getElementById("vol-charts").innerHTML =
+    `<div class="vol-chart"><div class="vol-chart-title">Training time per day<span class="vol-legend">${legend}</span></div><div class="vol-cols">${cols}</div></div>`;
+}
+
+async function initVolume() {
+  const rows = await loadCSV("data/volume.csv");
+  if (!rows.length) {
+    document.getElementById("volume").style.display = "none";
+    return;
+  }
+  const byDate = Object.fromEntries(rows.map((r) => [r.date, r]));
+  const dates = rows.map((r) => r.date).sort();
+  const first = mondayOf(dates[0]);
+  const last = mondayOf(dates[dates.length - 1]);
+  const today = mondayOf(localDateStr(new Date()));
+  let week = today < first ? first : today > last ? last : today;
+
+  const prev = document.getElementById("vol-prev");
+  const next = document.getElementById("vol-next");
+  const draw = () => {
+    renderVolume(byDate, week);
+    prev.disabled = week <= first;
+    next.disabled = week >= last;
+  };
+  prev.addEventListener("click", () => { week = addDays(week, -7); draw(); });
+  next.addEventListener("click", () => { week = addDays(week, 7); draw(); });
+  draw();
+}
+
 // ---------- calendar ----------
 
 function unescapeICS(s) {
@@ -1268,4 +1374,5 @@ function initEditing() {
   initHrEditing();
   await renderStats(targets);
   await initCalendar();
+  await initVolume();
 })();

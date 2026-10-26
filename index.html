@@ -24,7 +24,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png?v=1" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=1" />
 
-<link rel="stylesheet" href="assets/style.css?v=7" />
+<link rel="stylesheet" href="assets/style.css?v=11" />
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -145,6 +145,19 @@
     <div class="cal-files" id="cal-files"></div>
   </section>
 
+  <section id="volume">
+    <h2 class="section-title">Weekly training volume</h2>
+    <p class="section-sub">Assumes every session in the calendar is completed. Ranges use the upper bound; warm-up and cool-down are included. Swim time is estimated from yardage at ~37 yd/min (rests included).</p>
+
+    <div class="cal-toolbar">
+      <button id="vol-prev">&larr; Prev</button>
+      <div class="cal-label" id="vol-label"></div>
+      <button id="vol-next">Next &rarr;</button>
+    </div>
+    <div class="vol-summary" id="vol-summary"></div>
+    <div class="vol-charts" id="vol-charts"></div>
+  </section>
+
   <footer>
     Source data lives in <a href="data/">/data</a> (CSV per metric) and <a href="calendar/">/calendar</a> (ICS per block).
     Repo: <a href="https://github.com/bjwxh/tri_sub60">github.com/bjwxh/tri_sub60</a>.
@@ -218,6 +231,6 @@
   </div>
 </div>
 
-<script src="assets/app.js?v=4"></script>
+<script src="assets/app.js?v=6"></script>
 </body>
 </html>

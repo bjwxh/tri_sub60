@@ -1,0 +1,67 @@
+date,swim_yd,bike_min,run_min,strength_min,notes
+2026-08-17,0,0,0,30,"core/mobility"
+2026-08-18,1750,0,0,0,"swim converted from 1600m"
+2026-08-19,0,60,0,30,
+2026-08-20,1640,0,30,0,"swim converted from 1500m"
+2026-08-22,0,75,0,0,
+2026-08-23,1310,0,45,0,"swim converted from 1200m"
+2026-08-24,0,0,0,30,"core"
+2026-08-25,1970,0,0,0,"swim converted from 1800m"
+2026-08-26,0,75,0,35,
+2026-08-27,1860,0,40,0,"swim converted from 1700m"
+2026-08-29,0,90,0,0,
+2026-08-30,1530,0,55,0,"swim converted from 1400m"
+2026-08-31,0,0,0,30,"core/prehab"
+2026-09-01,2190,0,0,0,"swim converted from 2000m"
+2026-09-02,0,90,0,35,
+2026-09-03,2190,0,45,0,"swim converted from 2000m"
+2026-09-05,0,105,0,0,
+2026-09-06,1970,0,60,0,"swim converted from 1800m"
+2026-09-08,1530,0,0,0,"swim converted from 1400m"
+2026-09-09,0,50,0,25,
+2026-09-10,1310,0,30,0,"swim converted from 1200m"
+2026-09-12,0,60,0,0,"FTP test"
+2026-09-13,1200,0,40,0,"5K + CSS tests; volume estimated"
+2026-09-14,0,0,0,30,"mobility/prehab"
+2026-09-15,1900,0,45,0,"swim yardage estimated from 50min"
+2026-09-16,0,75,0,35,
+2026-09-17,1750,0,45,0,"swim yardage estimated from 45min"
+2026-09-18,0,50,0,30,"upper bound of range"
+2026-09-19,0,105,12,0,"long bike + brick run"
+2026-09-20,1600,0,60,0,"upper bound of range"
+2026-09-22,1800,0,45,0,
+2026-09-23,0,80,0,35,"strength 30-35 upper bound"
+2026-09-24,1700,0,35,0,
+2026-09-25,0,55,0,30,"strength 25-30 upper bound"
+2026-09-26,0,120,15,0,"long bike + brick run"
+2026-09-27,1400,0,65,0,
+2026-09-29,1800,0,50,0,
+2026-09-30,0,85,0,30,
+2026-10-01,1800,0,40,0,"upper bound of 1700-1800yd"
+2026-10-02,0,60,0,25,"upper bound of 55-60min"
+2026-10-03,0,125,15,0,"long bike + brick run"
+2026-10-04,1400,0,65,0,"optional swim counted, upper bound"
+2026-10-06,1700,0,55,0,
+2026-10-07,0,90,0,30,"upper bound of 85-90min"
+2026-10-08,1900,0,40,0,"upper bound of 35-40min run"
+2026-10-09,0,60,0,25,
+2026-10-10,0,130,18,0,"long bike + brick run"
+2026-10-11,1300,0,70,0,"optional swim counted"
+2026-10-13,1900,0,50,0,
+2026-10-14,0,90,0,30,
+2026-10-15,1750,0,40,0,
+2026-10-16,0,60,0,25,
+2026-10-17,0,135,20,0,"long bike + brick run"
+2026-10-18,1200,0,70,0,"optional swim counted, upper bound"
+2026-10-20,1700,0,0,0,"CSS test incl. warm-up"
+2026-10-21,0,60,0,20,"upper bound of 50-60min"
+2026-10-22,0,0,65,0,"5K test: 25 warm-up + test + 15 cool-down"
+2026-10-23,1200,0,0,0,"optional recovery swim counted"
+2026-10-24,0,70,0,0,"bike benchmark: 30 warm-up + 20 test + 20 cool-down"
+2026-10-25,0,60,0,0,"upper bound of 45-60min"
+2026-10-27,2200,30,0,0,
+2026-10-28,0,75,0,0,
+2026-10-29,2400,0,0,0,
+2026-10-30,1800,30,0,0,
+2026-10-31,0,150,0,0,
+2026-11-01,2000,0,0,0,
