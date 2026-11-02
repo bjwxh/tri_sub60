@@ -760,6 +760,7 @@ const VOL_SPORTS = [
   { key: "swim_yd",      label: "Swim",     color: "var(--series-1)", unit: "yd" },
   { key: "bike_min",     label: "Bike",     color: "var(--series-3)", unit: "h" },
   { key: "run_min",      label: "Run",      color: "var(--series-2)", unit: "h" },
+  { key: "walk_min",     label: "Walk",     color: "var(--series-4)", unit: "h" },
   { key: "strength_min", label: "Strength", color: "var(--series-5)", unit: "h" },
 ];
 const VOL_PLAN_START = "2026-08-17"; // Monday of W1
