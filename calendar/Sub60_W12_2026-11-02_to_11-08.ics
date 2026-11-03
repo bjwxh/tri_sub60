@@ -10,7 +10,12 @@ DTSTAMP:20261102T160000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:W12D1 | Swim 0yd | Bike 0min | Run 0min | Walk 0min | Strength 0min
-DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; no running.\nRest day. PT-prescribed calf rehab only\; no scheduled sport training.\nDaily totals: Swim 0yd\; Bike 0min\; Run 0min\; Walk 0min\; Strength 0min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/reduce and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
+DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; n
+ o running.\nRest day. PT-prescribed calf rehab only\; no scheduled sport t
+ raining.\nDaily totals: Swim 0yd\; Bike 0min\; Run 0min\; Walk 0min\; Stre
+ ngth 0min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/red
+ uce and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k 
+ tests this week.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -18,8 +23,26 @@ UID:sub60-w12d2-20261102@training.local
 DTSTAMP:20261102T160000Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
-SUMMARY:W12D2 | Swim 2100yd | Bike 60min | Run 0min | Walk 0min | Strength 0min
-DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; no running.\nSWIM 2100yd: 300 easy + 6x50 technique (300) + 6x200 aerobic controlled (1200\; 20s rest) + 300 easy. BIKE 60min: 10 easy + 40 comfortable Z2 (RPE 3-4/10) + 10 easy. Seated\, avoid hard standing climbs.\nDaily totals: Swim 2100yd\; Bike 60min\; Run 0min\; Walk 0min\; Strength 0min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/reduce and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
+SUMMARY:W12D2 | Swim 2100yd | Bike 60min | Run 0min | Walk 0min | Strength 
+ 0min
+DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; n
+ o running.\nSWIM 2100yd — Catch mechanics and stroke rhythm (RPE 3-6):\n
+ Warm-up 300yd: 200 easy freestyle + 100 easy backstroke or freestyle\, no 
+ gear.\nTechnique 4x50=200yd: 25 single-arm freestyle + 25 normal freestyle
+ \; alternate arms\; no gear.\nBuoy comparison 8x50=400yd: odd repeats with
+  pull buoy\, even normal freestyle\; rest 20s\, same effort. Record pace a
+ nd strokes per 25yd.\nAerobic main set 4x200=800yd: normal freestyle\, res
+ t 25s\, RPE 5\, smooth continuous strokes.\nCatch awareness 4x50=200yd: fi
+ rst 2x50 small paddles OPTIONAL\, last 2x50 normal freestyle\, rest 25s. S
+ kip paddles if shoulders uncomfortable.\nCooldown 200yd easy freestyle\, n
+ o gear.\nKey focus: relaxed recovery\, neutral head\, begin next catch wit
+ hout exaggerated pause. Do not chase lower stroke count.\nBIKE 60min: 10 e
+ asy + 40 comfortable Z2 (RPE 3-4/10) + 10 easy. Seated\, avoid hard standi
+ ng climbs.\nNO FINS\; gentle wall push-offs\; stop provoking calf symptoms
+ .\nDaily totals: Swim 2100yd\; Bike 60min\; Run 0min\; Walk 0min\; Strengt
+ h 0min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/reduce
+  and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k tes
+ ts this week.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -27,8 +50,25 @@ UID:sub60-w12d3-20261102@training.local
 DTSTAMP:20261102T160000Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
-SUMMARY:W12D3 | Swim 2100yd | Bike 0min | Run 0min | Walk 10min | Strength 20min
-DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; no running.\nSWIM 2100yd: 400 easy + 8x50 technique (400) + 4x300 relaxed aerobic (1200\; 25-30s rest) + 100 easy. WALK 10min easy\, flat\, even ground\, no fast pace. STRENGTH 20min seated/lying upper body and core only\; avoid loaded calf exercises unless PT-prescribed.\nDaily totals: Swim 2100yd\; Bike 0min\; Run 0min\; Walk 10min\; Strength 20min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/reduce and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
+SUMMARY:W12D3 | Swim 2100yd | Bike 0min | Run 0min | Walk 10min | Strength 
+ 20min
+DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; n
+ o running.\nSWIM 2100yd — Body position and buoy-to-normal transfer (RPE
+  3-5):\nWarm-up 300yd relaxed freestyle\, no gear.\nPreparation 4x50=200yd
+ : 25 gentle side-balance drill + 25 freestyle\, minimal kick\; no gear. Su
+ bstitute easy freestyle if calf stressed.\nControlled comparison 4x100=400
+ yd: normal / buoy / normal / buoy\, rest 30s\, same RPE 5. Record pace\, s
+ troke rate (SPM)\, strokes per 25yd and RPE.\nAerobic comparison 6x150=900
+ yd: odd repeats with buoy\, even normal freestyle\; rest 25s\, RPE 4-5.\nR
+ hythm transfer 4x50=200yd normal freestyle: mimic comfortable buoy rhythm 
+ with relaxed legs\, rest 20s.\nCooldown 100yd easy freestyle\, no gear.\nF
+ ocus: compare equal effort rather than forcing same pace.\nWALK 10min easy
+  flat even ground\, no fast pace.\nSTRENGTH 20min seated/lying upper body 
+ and core only\; avoid loaded calf exercises unless PT-prescribed.\nNO FINS
+ \; gentle wall push-offs\; stop provoking calf symptoms.\nDaily totals: Sw
+ im 2100yd\; Bike 0min\; Run 0min\; Walk 10min\; Strength 20min.\nIf calf p
+ ain\, limp\, swelling or next-day worsening: stop/reduce and contact PT as
+  appropriate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -36,8 +76,15 @@ UID:sub60-w12d4-20261102@training.local
 DTSTAMP:20261102T160000Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
-SUMMARY:W12D4 | Swim 0yd | Bike 75min | Run 0min | Walk 0min | Strength 0min
-DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; no running.\nBIKE 75min: 15min easy + 3x12min steady aerobic upper Z2 (36min total)\, 4min easy between (8min total) + 16min comfortable easy = 75min. Seated\, no sprints. PT rehab.\nDaily totals: Swim 0yd\; Bike 75min\; Run 0min\; Walk 0min\; Strength 0min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/reduce and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
+SUMMARY:W12D4 | Swim 0yd | Bike 75min | Run 0min | Walk 0min | Strength 0mi
+ n
+DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; n
+ o running.\nBIKE 75min: 15min easy + 3x12min steady aerobic upper Z2 (36mi
+ n total)\, 4min easy between (8min total) + 16min comfortable easy = 75min
+ . Seated\, no sprints. PT rehab.\nDaily totals: Swim 0yd\; Bike 75min\; Ru
+ n 0min\; Walk 0min\; Strength 0min.\nIf calf pain\, limp\, swelling or nex
+ t-day worsening: stop/reduce and contact PT as appropriate. Follow PT reha
+ b exactly. No CSS/FTP/5k tests this week.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -45,8 +92,25 @@ UID:sub60-w12d5-20261102@training.local
 DTSTAMP:20261102T160000Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
-SUMMARY:W12D5 | Swim 2500yd | Bike 0min | Run 0min | Walk 15min | Strength 20min
-DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; no running.\nSWIM 2500yd: 400 easy + 8x50 drill (400) + 5x300 aerobic\, sustainable (1500\; 25-30s rest) + 200 easy. WALK 15min flat easy\, only if 10min session caused no reaction during or the next morning. STRENGTH 20min seated/lying upper body and core\; PT rehab.\nDaily totals: Swim 2500yd\; Bike 0min\; Run 0min\; Walk 15min\; Strength 20min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/reduce and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
+SUMMARY:W12D5 | Swim 2500yd | Bike 0min | Run 0min | Walk 15min | Strength 
+ 20min
+DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; n
+ o running.\nSWIM 2500yd — Aerobic endurance and rhythm transfer (RPE 3-6
+ ):\nWarm-up 400yd: 300 easy + 100 progressively smoother\, no gear.\nTechn
+ ique 4x50=200yd: pull buoy\, relaxed pull and steady turnover\, rest 20s.\
+ nMain endurance 3x400=1200yd: #1 normal freestyle at RPE 5\, #2 pull buoy 
+ at same RPE 5\, #3 normal freestyle with buoy-like rhythm at RPE 5. Rest 3
+ 0s after each. Compare #1 and #3.\nTempo control 4x100=400yd: normal frees
+ tyle\, consistent rhythm\, rest 20s\, RPE 5-6.\nCatch technique 4x50=200yd
+ : first 2x50 small paddles OPTIONAL\, last 2x50 normal freestyle. If new t
+ o paddles\, skip on Friday.\nCooldown 100yd easy freestyle.\nFocus: smooth
+ er catch transitions rather than pulling harder.\nWALK 15min flat easy onl
+ y if Wednesday walking caused no symptoms during or next morning.\nSTRENGT
+ H 20min seated/lying upper body and core\; PT rehab.\nNO FINS\; gentle wal
+ l push-offs\; stop provoking calf symptoms.\nDaily totals: Swim 2500yd\; B
+ ike 0min\; Run 0min\; Walk 15min\; Strength 20min.\nIf calf pain\, limp\, 
+ swelling or next-day worsening: stop/reduce and contact PT as appropriate.
+  Follow PT rehab exactly. No CSS/FTP/5k tests this week.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -54,8 +118,15 @@ UID:sub60-w12d6-20261102@training.local
 DTSTAMP:20261102T160000Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261108
-SUMMARY:W12D6 | Swim 0yd | Bike 135min | Run 0min | Walk 0min | Strength 0min
-DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; no running.\nBIKE 135min: 15 easy + 105 comfortable Z2 endurance (RPE 3-4/10) + 15 easy. Flat terrain or trainer\, mostly seated. Fuel/hydrate regularly. If calf irritated\, shorten or stop. PT rehab.\nDaily totals: Swim 0yd\; Bike 135min\; Run 0min\; Walk 0min\; Strength 0min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/reduce and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
+SUMMARY:W12D6 | Swim 0yd | Bike 135min | Run 0min | Walk 0min | Strength 0m
+ in
+DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; n
+ o running.\nBIKE 135min: 15 easy + 105 comfortable Z2 endurance (RPE 3-4/1
+ 0) + 15 easy. Flat terrain or trainer\, mostly seated. Fuel/hydrate regula
+ rly. If calf irritated\, shorten or stop. PT rehab.\nDaily totals: Swim 0y
+ d\; Bike 135min\; Run 0min\; Walk 0min\; Strength 0min.\nIf calf pain\, li
+ mp\, swelling or next-day worsening: stop/reduce and contact PT as appropr
+ iate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -63,8 +134,23 @@ UID:sub60-w12d7-20261102@training.local
 DTSTAMP:20261102T160000Z
 DTSTART;VALUE=DATE:20261108
 DTEND;VALUE=DATE:20261109
-SUMMARY:W12D7 | Swim 1800yd | Bike 40min | Run 0min | Walk 20min | Strength 0min
-DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; no running.\nSWIM 1800yd: 300 easy + 6x50 technique (300) + 8x150 easy aerobic (1200\; 15-20s rest). BIKE 40min easy Z1/low Z2\, seated\, optional only if calf remains settled. WALK 20min flat easy\, only if 15min session and next morning were symptom-free\; otherwise repeat or omit. PT rehab.\nDaily totals: Swim 1800yd\; Bike 40min\; Run 0min\; Walk 20min\; Strength 0min.\nIf calf pain\, limp\, swelling or next-day worsening: stop/reduce and contact PT as appropriate. Follow PT rehab exactly. No CSS/FTP/5k tests this week.
+SUMMARY:W12D7 | Swim 1800yd | Bike 40min | Run 0min | Walk 20min | Strength
+  0min
+DESCRIPTION:Goal: sub60 sprint triathlon 2027-08-01\; W12 calf recovery\; n
+ o running.\nSWIM 1800yd — Easy recovery and technique consolidation (RPE
+  2-4):\nWarm-up 300yd easy freestyle\, no gear.\nStroke timing 6x50=300yd:
+  normal freestyle\, smooth turnover\, rest 20s.\nEasy aerobic 3x300=900yd:
+  normal freestyle\, rest 30s\, comfortable consistent pace.\nBody-position
+  check 4x50=200yd: OPTIONAL buoy for first 2x50\; last 2x50 normal freesty
+ le\, rest 20s. May do all four without buoy.\nCooldown 100yd very easy fre
+ estyle.\nFocus: recovery\, gentle kicking\, no paddles or fins.\nBIKE 40mi
+ n easy Z1/low Z2 seated\, optional if calf remains settled.\nWALK 20min fl
+ at easy only if Friday walk and next morning were symptom-free\; otherwise
+  repeat or omit. PT rehab.\nNO FINS\; gentle wall push-offs\; stop provoki
+ ng calf symptoms.\nDaily totals: Swim 1800yd\; Bike 40min\; Run 0min\; Wal
+ k 20min\; Strength 0min.\nIf calf pain\, limp\, swelling or next-day worse
+ ning: stop/reduce and contact PT as appropriate. Follow PT rehab exactly. 
+ No CSS/FTP/5k tests this week.
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR
