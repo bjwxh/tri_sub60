@@ -1,0 +1,197 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//sub60//Week 13 Training//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:sub60 W13 Training
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:VEVENT
+UID:sub60-w13-01-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261110T061500
+DTEND;TZID=America/Chicago:20261110T071000
+SUMMARY:W13D2 SWIM | 2500 yd | aerobic + buoy comparison
+DESCRIPTION:W13D2 — TUESDAY SWIM | 2500 yd | 25-yard pool\nGOAL: Aerobic 
+ endurance and compare buoy vs unassisted swimming.\n01 | WARM-UP — 400 y
+ d\n400 easy freestyle\, NO equipment\; relaxed breathing.\nRest 30 sec bef
+ ore drills.\n02 | TECHNIQUE — 4 x 50 yd = 200 yd\n#1-2: 25 catch-up dril
+ l + 25 easy freestyle\, NO equipment.\n#3-4: 25 fingertip drag + 25 easy f
+ reestyle\, NO equipment.\nRest 20 sec after EACH 50\; 30 sec before main s
+ et.\n03 | MAIN SET — 4 x 300 yd = 1200 yd\n#1: NO equipment\; smooth aer
+ obic\, RPE 4-5.\n#2: PULL BUOY only\; same effort\, compare pace and strok
+ es.\n#3: NO equipment\; same effort\, compare with #1.\n#4: NO equipment\;
+  controlled technique\, RPE 5.\nRest 30 sec after EACH 300\; 45 sec before
+  next set.\n04 | CONTROLLED AEROBIC — 4 x 100 yd = 400 yd\nAll NO equipm
+ ent\; even relaxed pace\, RPE 4-5.\nRest 20 sec after EACH 100\; 30 sec be
+ fore cooldown.\n05 | COOLDOWN — 6 x 50 yd = 300 yd\nAll NO equipment\; v
+ ery easy freestyle or backstroke.\nRest 15 sec after EACH 50.\nTOTAL: 400 
+ + 200 + 1200 + 400 + 300 = 2500 yd.\nEQUIPMENT: Pull buoy ONLY for main-se
+ t 300 #2. NO paddles or fins.\nCALF: Gentle push-offs\; avoid hard kicking
+ . Record split and stroke count for all 300s.\nRest times are between repe
+ ats\; no extra rest needed after final cooldown.
+SEQUENCE:1
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-02-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261110T180000
+DTEND;TZID=America/Chicago:20261110T182500
+SUMMARY:W13D2 Run/walk return
+DESCRIPTION:5 min brisk walk\; run 5 min / walk 2 min / run 5 min\; 8 minwa
+ lk cooldown. Easy conversational pace\, flat terrain. Stop for pain\, \nal
+ tered gait or increasing tightness.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-03-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261111T180000
+DTEND;TZID=America/Chicago:20261111T193000
+SUMMARY:W13D3 Bike Z2 90 min
+DESCRIPTION:Steady easy Z2\; cadence mostly 80-85 rpm\; monitor L/R witho\n
+ ut consciously pushing harder with left leg. Use your calibrated Magene p\
+ nower zones\; FTP not yet confirmed.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-04-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261111T193500
+DTEND;TZID=America/Chicago:20261111T200000
+SUMMARY:W13D3 Strength / rehab
+DESCRIPTION:Gentle calf isometrics and pain-free calf raises\, bridges\, \n
+ controlled squats\, single-leg balance. Avoid jumping and maximal loading\
+ n.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-05-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261112T061500
+DTEND;TZID=America/Chicago:20261112T071500
+SUMMARY:W13D4 SWIM | 2700 yd | aerobic consistency
+DESCRIPTION:W13D4 — THURSDAY SWIM | 2700 yd | 25-yard pool\nGOAL: Sustain
+ able unassisted pace and consistent technique.\n01 | WARM-UP — 400 yd\n4
+ 00 easy freestyle\, NO equipment.\nRest 30 sec before drills.\n02 | DRILLS
+  — 6 x 50 yd = 300 yd\n#1-2: 25 catch-up + 25 easy freestyle\, NO equipm
+ ent.\n#3-4: 25 fingertip drag + 25 easy freestyle\, NO equipment.\n#5-6: 2
+ 5 single-arm focus + 25 easy freestyle\, NO equipment\; keep kicking gentl
+ e.\nRest 20 sec after EACH 50\; 45 sec before main set.\n03 | MAIN SET —
+  8 x 200 yd = 1600 yd\n#1-4: NO equipment\; steady aerobic RPE 4-5.\n#5: P
+ ULL BUOY only\; compare pace and stroke count at same effort.\n#6-8: NO eq
+ uipment\; maintain stroke quality\, RPE 4-5.\nRest 25 sec after EACH 200\;
+  45 sec before next set.\nDo not force a target pace if technique deterior
+ ates.\n04 | FINISH — 4 x 100 yd = 400 yd\n#1-3: NO equipment\; smooth co
+ ntrolled aerobic RPE 4-5.\n#4: NO equipment\; easy cooldown RPE 2-3.\nRest
+  20 sec after EACH 100.\nTOTAL: 400 + 300 + 1600 + 400 = 2700 yd.\nEQUIPME
+ NT: Pull buoy ONLY for main-set 200 #5. NO paddles or fins.\nCALF: Gentle 
+ wall push-offs\; no hard kick sets.\nLOG: Splits and strokes for 200s #4\,
+  #5 and #6 to compare assisted vs unassisted.
+SEQUENCE:1
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-06-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261112T180000
+DTEND;TZID=America/Chicago:20261112T183000
+SUMMARY:W13D4 Run/walk return
+DESCRIPTION:5 min brisk walk\; run 8 min / walk 3 min / run 8 min\; 6 minwa
+ lk cooldown =30 min. Easy only\; progress if no pain during and follow\nin
+ g day.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-07-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261113T180000
+DTEND;TZID=America/Chicago:20261113T193000
+SUMMARY:W13D5 Bike cadence control
+DESCRIPTION:15 min easy + 5x(5 min at 85-90 rpm steady Z2 / 3 min easy) +35
+  min easy Z2 =90 min. Avoid forced left-side compensation.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-08-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261113T193500
+DTEND;TZID=America/Chicago:20261113T200000
+SUMMARY:W13D5 Strength / rehab
+DESCRIPTION:Light posterior chain and calf rehabilitation\, controlled ca\n
+ lf raises\, hip stability. Keep soreness low before long ride.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-09-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261114T080000
+DTEND;TZID=America/Chicago:20261114T103500
+SUMMARY:W13D6 Long ride Z2
+DESCRIPTION:155 min mostly Z2\, conversational effort. Fuel and hydrate a\n
+ ppropriately. No swim today. If calf becomes symptomatic\, shorten.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-10-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261115T080000
+DTEND;TZID=America/Chicago:20261115T084000
+SUMMARY:W13D7 SWIM | 1800 yd | easy technique
+DESCRIPTION:W13D7 — SUNDAY SWIM | 1800 yd | 25-yard pool\nGOAL: Easy tech
+ nique swim before recovery bike + return-to-run.\n01 | WARM-UP — 300 yd\
+ n300 easy freestyle\, NO equipment\; RPE 2-3.\nRest 30 sec before drills.\
+ n02 | TECHNIQUE — 6 x 50 yd = 300 yd\n#1-2: 25 catch-up + 25 easy freest
+ yle\, NO equipment.\n#3-4: 25 fingertip drag + 25 easy freestyle\, NO equi
+ pment.\n#5-6: relaxed bilateral breathing practice\, NO equipment.\nRest 2
+ 0 sec after EACH 50\; 30 sec before main set.\n03 | MAIN SET — 4 x 250 y
+ d = 1000 yd\n#1: NO equipment\; relaxed aerobic RPE 3-4.\n#2: PULL BUOY on
+ ly\; same effort\, compare pace and strokes.\n#3: NO equipment\; compare w
+ ith #1.\n#4: NO equipment\; smooth\, easy form RPE 3-4.\nRest 30 sec after
+  EACH 250\; 30 sec before cooldown.\n04 | COOLDOWN — 4 x 50 yd = 200 yd\
+ nAll NO equipment\; very easy RPE 2.\nRest 15 sec after EACH 50.\nTOTAL: 3
+ 00 + 300 + 1000 + 200 = 1800 yd.\nEQUIPMENT: Pull buoy ONLY for main-set 2
+ 50 #2. NO paddles or fins.\nCALF: Gentle push-offs\; minimal kicking effor
+ t.\nIMPORTANT: Save energy for today's bike + run/walk\; no hard swim inte
+ rvals.
+SEQUENCE:1
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-11-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261115T100000
+DTEND;TZID=America/Chicago:20261115T102500
+SUMMARY:W13D7 Recovery bike
+DESCRIPTION:25 min Z1 easy spin\, comfortable cadence 80-85 rpm. May linkdi
+ rectly to run/walk\, without aggressive transition.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-w13-12-20261109@training.local
+DTSTAMP:20261109T141000Z
+DTSTART;TZID=America/Chicago:20261115T103000
+DTEND;TZID=America/Chicago:20261115T110500
+SUMMARY:W13D7 Run/walk return
+DESCRIPTION:5 min brisk walk\; run 10 min / walk 3 min / run 10 min\; 7 m\n
+ in walk cooldown =35 min. Only if Tuesday and Thursday plus following mor\
+ nnings symptom-free.
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
