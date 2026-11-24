@@ -1,0 +1,162 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sub60//Training Plan//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sub60 W15 Training
+BEGIN:VEVENT
+UID:sub60-2026-w15d1@training.local
+DTSTAMP:20261124T161800Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:W15D1 | Rest & recovery
+DESCRIPTION:W15D1 | Base → Build transition\nPlanned training: 0 min (exc
+ luding extra walking warm-up).\n\nREST & RECOVERY\nNo formal training. Do 
+ not make up missed sessions.
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-2026-w15d2@training.local
+DTSTAMP:20261124T161800Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:W15D2 | Bike 75m + Run/Walk 24m
+DESCRIPTION:W15D2 | Base → Build transition\nPlanned training: 99 min (ex
+ cluding extra walking warm-up).\n\nBIKE — 75 min\n10 min Z1 warm-up\n25 
+ min Z2\n15 min Z2 at 80–85 rpm\n15 min Z2\n10 min Z1 cool-down\nRPE 3–
+ 4\, conversational. No unverified FTP targets. Do not force left/right bal
+ ance.\n\nRUN/WALK — 24 min\n3 × (5 min easy run + 3 min walk)\n15 min r
+ unning\, 9 min walking.\nWalk a few minutes before starting (extra time). 
+ Flat route\, RPE 2–3. Stop for local pain.\n\nCALF CHECK\nDo not run if 
+ symptoms persist from the previous session. Stop for local pain. If tightn
+ ess resolves by next day\, do not increase load. Persistent symptoms: skip
+  next run. Walking pain or focal bone tenderness: pause running and seek s
+ ports medicine evaluation.
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-2026-w15d3@training.local
+DTSTAMP:20261124T161800Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:W15D3 | SWIM CSS TEST — 1700 yd
+DESCRIPTION:W15D3 | Base → Build transition\nPlanned training: 60 min (ex
+ cluding extra walking warm-up).\n\nSWIM — CSS TEST — 1700 yd / 60 min\
+ n25 yd pool. No equipment throughout. No dive start. Use consistent turns.
+ \n\n1. 400 yd easy warm-up\; rest 30s.\n2. 4 × 50 yd progressive\; rest 2
+ 0s after each.\n3. 4 × 25 yd fast\, not all-out\; rest 30s after each.\n4
+ . 400 yd timed maximum sustainable effort. Start controlled\, maintain pac
+ e\, finish hard.\n5. 200 yd very easy recovery\; then rest poolside so tot
+ al recovery between tests is about 10 min.\n6. 200 yd timed maximum sustai
+ nable effort\; finish last 50 yd hard. Rest 60s.\n7. 200 yd easy cool-down
+ .\n\nRECORD\n400 yd time and 100 yd splits\; 200 yd time and 50 yd splits\
+ ; strokes/length\, stroke rate\, SWOLF\, RPE and calf symptoms.\nCSS (seco
+ nds/100 yd) = (400 yd seconds − 200 yd seconds)/2.\nCurrent recorded CSS
+ : 1:52/100 yd until updated by valid test.\nStop if wall push-off causes c
+ alf pain.
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-2026-w15d4@training.local
+DTSTAMP:20261124T161800Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:W15D4 | Bike 90m + Strength 25m
+DESCRIPTION:W15D4 | Base → Build transition\nPlanned training: 115 min (e
+ xcluding extra walking warm-up).\n\nBIKE — 90 min\n10 min Z1 warm-up\n30
+  min Z2\n5 min Z1\n30 min Z2\n5 min low Z2\n10 min Z1 cool-down\n80–90 r
+ pm\, seated. No threshold or Sweet Spot.\n\nSTRENGTH — 25 min\nGlute bri
+ dge: 2 × 15\; rest 45s.\nBodyweight squat: 2 × 12\; rest 60s.\nSide-lyin
+ g hip abduction: 2 × 12/side\; rest 30s.\nDead bug: 2 × 10/side\; rest 3
+ 0s.\nSide plank: 2 × 30s/side\; rest 30s.\nSeated calf isometric: 3 × 30
+ s\; rest 30s\; only if painless and consistent with PT guidance.\nNo failu
+ re\, jumping or heavy eccentric work.
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-2026-w15d5@training.local
+DTSTAMP:20261124T161800Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:W15D5 | Swim 2600 yd + Run/Walk 24m
+DESCRIPTION:W15D5 | Base → Build transition\nPlanned training: 84 min (ex
+ cluding extra walking warm-up).\n\nSWIM — 2600 yd / 60 min (estimated)\n
+ 25 yd pool. Rest after each repeat as listed.\n\n1. 400 yd easy\, RPE 3\; 
+ no equipment\; rest 30s.\n2. 2 × 50 yd: first 25 catch awareness\, second
+  25 normal swim\; pull buoy\; rest 20s.\n3. 2 × 50 yd body balance and ca
+ tch\; no equipment\; rest 20s.\n4. 400 yd steady aerobic\, RPE 4–5\; no 
+ equipment\; rest 30s.\n5. 400 yd body position and rhythm\; pull buoy\; re
+ st 30s.\n6. 400 yd maintain first-repeat efficiency\; no equipment\; rest 
+ 45s.\n7. 2 × 100 yd steady catch\, RPE 4\; small paddles + pull buoy\; re
+ st 20s.\n8. 4 × 100 yd transfer catch sensation\; no equipment\; rest 20s
+ .\n9. 200 yd easy cool-down\; no equipment.\n\nPACE: unassisted 400s = new
+  CSS + 8–15s/100 yd\; unassisted 100s = CSS + 5–10s/100 yd. Assisted s
+ ets by RPE. If no valid new CSS\, use RPE. Record 400s separately. No fins
+  or dedicated kicking.\n\nRUN/WALK — 24 min\n3 × (5 min easy run + 3 mi
+ n walk). Run 15 min total. Extra walking warm-up. Flat route\, RPE 2–3. 
+ No progression or fast brick.\n\nCALF CHECK\nDo not run if symptoms persis
+ t from the previous session. Stop for local pain. If tightness resolves by
+  next day\, do not increase load. Persistent symptoms: skip next run. Walk
+ ing pain or focal bone tenderness: pause running and seek sports medicine 
+ evaluation.
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-2026-w15d6@training.local
+DTSTAMP:20261124T161800Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:W15D6 | BIKE FTP TEST — 75m
+DESCRIPTION:W15D6 | Base → Build transition\nPlanned training: 75 min (ex
+ cluding extra walking warm-up).\n\nBIKE — FTP TEST — 75 min\nCAAD12 + 
+ Magene P715S. Zero-offset calibration. Prefer stable\, ventilated indoor s
+ etup\; ERG off. Record power\, HR\, cadence and L/R balance.\n\n1. 20 min 
+ warm-up\, Z1 progressing to Z2.\n2. 6 min: 3 × (1 min fast cadence + 1 mi
+ n easy).\n3. 5 min hard\, near maximum sustainable 5-min power.\n4. 10 min
+  very easy recovery.\n5. 20 min timed maximum sustainable average power.\n
+    0–5 min: controlled\, RPE 7–8.\n   5–10 min: steady\, RPE 8–9.\
+ n   10–15 min: maintain\, RPE 9.\n   15–18 min: increase only if able.
+ \n   18–20 min: finish hard\, seated.\n6. 14 min Z1 cool-down.\n\nCadenc
+ e 80–90 rpm or comfortable natural cadence. Do not force L/R balance. St
+ op for calf pain.\nFTP estimate = 0.95 × 20-min average power (not normal
+ ized power). Validate in later training. Record 5-min and 20-min power\, H
+ R\, cadence\, L/R and RPE.
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sub60-2026-w15d7@training.local
+DTSTAMP:20261124T161800Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:W15D7 | Run/Walk 40m + Bike 90m + Swim 2800 yd
+DESCRIPTION:W15D7 | Base → Build transition\nPlanned training: 195 min (e
+ xcluding extra walking warm-up).\n\nRUN/WALK — 40 min\n5 × (5 min easy 
+ run + 3 min walk).\n25 min running\, 15 min walking. Extra walking warm-up
+ . Flat route\, RPE 2–3. Do only if recovered from FTP and previous runs.
+ \n\nBIKE — 90 min\n10 min Z1 warm-up\n35 min at 60–65% new FTP\n5 min 
+ Z1\n30 min at 60–70% new FTP\n10 min Z1 cool-down\nIf no valid FTP\, use
+  easy conversational RPE 3–4. Shorten to 60 min or skip if fatigued.\n\n
+ SWIM — 2800 yd / 65 min (estimated)\n25 yd pool. Rest after each repeat 
+ as listed.\n1. 400 yd easy\; no equipment\; rest 30s.\n2. 2 × 50 yd high-
+ elbow catch\; pull buoy\; rest 20s.\n3. 2 × 50 yd catch pressure\; small 
+ paddles + pull buoy\; rest 20s.\n4. 2 × 50 yd natural rhythm\; no equipme
+ nt\; rest 20s.\n5. 400 yd aerobic RPE 4–5\; no equipment\; rest 30s.\n6.
+  400 yd aerobic RPE 4–5\; no equipment\; rest 30s.\n7. 400 yd aerobic RP
+ E 4–5\; pull buoy\; rest 30s.\n8. 400 yd aerobic RPE 4–5\; no equipmen
+ t\; rest 45s.\n9. 4 × 100 yd aerobic\, CSS + 5–10s/100 yd\, RPE ≤6\; 
+ no equipment\; rest 20s.\n10. 100 yd easy cool-down\; no equipment.\nNo fi
+ ns or dedicated kicking. If no valid CSS\, use RPE.\n\nCALF CHECK\nDo not 
+ run if symptoms persist from the previous session. Stop for local pain. If
+  tightness resolves by next day\, do not increase load. Persistent symptom
+ s: skip next run. Walking pain or focal bone tenderness: pause running and
+  seek sports medicine evaluation.
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
